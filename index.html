@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Van Tran — Portfolio</title>
+  <meta name="description" content="Portfolio of Van Tran: projects, experience, and contact." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0e1216;
+      --panel:#141a20;
+      --elev:#182129;
+      --fg:#e8edf2;
+      --muted:#a4b0ba;
+      --line:#24303a;
+      --accent:#8bd3ff;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Inter,system-ui,sans-serif;color:var(--fg);background:linear-gradient(120deg,#0f1318 0%,#0e1216 40%,#101820 100%);padding-top:72px}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    header{position:fixed;top:0;left:0;width:100%;backdrop-filter:blur(10px);background:rgba(14,18,22,.65);border-bottom:1px solid var(--line);z-index:50}
+    nav{display:flex;justify-content:space-between;align-items:center}
+    .links{display:flex;gap:24px}
+    .links a{color:var(--muted);padding:10px 14px;border-radius:10px;text-decoration:none}
+    .links a:hover,.links a.active{color:var(--fg);background:rgba(255,255,255,0.06)}
+    section{padding:40px 0; scroll-margin-top:96px}
+    h1{font-size:40px;margin-bottom:10px}
+    h2{font-size:24px;margin-bottom:18px}
+    .card{background:var(--elev);border:1px solid var(--line);border-radius:18px;padding:18px;margin-bottom:20px}
+    /* About layout */
+    .about-wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:start}
+    .pfp{width:220px;height:220px;border-radius:20px;background:var(--panel);border:1px solid var(--line);overflow:hidden;display:grid;place-items:center;font-size:72px}
+    .pfp img{width:100%;height:100%;object-fit:cover}
+    .triptych{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+    figure img{width:100%;height:160px;object-fit:cover;border-radius:12px;border:1px solid var(--line)}
+    figure figcaption{text-align:center;color:var(--muted);font-size:12px;margin-top:6px}
+    footer{border-top:1px solid var(--line);color:var(--muted);text-align:center;padding:28px 0;margin-top:40px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a class="logo" href="#about">Van Tran</a>
+        <div class="links">
+          <a href="#about" class="active">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="about">
+      <div class="about-wrap">
+        <div>
+          <h1>Van Tran</h1>
+          <p class="meta" style="margin:6px 0 14px">Aspiring Control & Autonomous Systems Engineer</p>
+          <div class="card">
+            <h2>Summary</h2>
+            <p>Computer Engineering student at UTD (’27). I build real‑time control and autonomy systems that bridge hardware and software — from EMG‑controlled prosthetics to ROS2 multi‑drone coordination.</p>
+          </div>
+          <div class="card">
+            <h2>Education</h2>
+            <p>University of Texas at Dallas — B.S. Computer Engineering (Expected 2027)</p>
+          </div>
+        </div>
+        <div>
+          <div class="pfp" aria-label="avatar" title="Your photo">
+            <img src="photo.jpg" alt="Van Tran" onerror="this.outerHTML='👋'" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <article class="card">
+        <h3>EMG‑Controlled Prosthetic Arm</h3>
+        <p>ESP32 + EMG (uMyo) for muscle‑based control; analog/digital filtering reduced latency ~25%.</p>
+        <div class="triptych">
+          <figure><img src="images/emg-1.jpg" alt="EMG build"><figcaption>Sensor placement</figcaption></figure>
+          <figure><img src="images/emg-2.jpg" alt="PCB"><figcaption>Driver/PCB</figcaption></figure>
+          <figure><img src="images/emg-3.jpg" alt="Arm test"><figcaption>Live test</figcaption></figure>
+        </div>
+      </article>
+      <article class="card">
+        <h3>Probabilistic UAV Trajectory Prediction</h3>
+        <p>Diffusion model trained on EKF‑filtered flight logs; reduced mean trajectory error vs. baseline.</p>
+        <div class="triptych">
+          <figure><img src="images/uv-1.jpg" alt="Dataset"><figcaption>Dataset</figcaption></figure>
+          <figure><img src="images/uv-2.jpg" alt="Training"><figcaption>Training</figcaption></figure>
+          <figure><img src="images/uv-3.jpg" alt="Results"><figcaption>Results</figcaption></figure>
+        </div>
+      </article>
+      <article class="card">
+        <h3>ROS2 Multi‑Drone Coordination</h3>
+        <p>DDS‑based formation control & collision avoidance with dynamic waypoints.</p>
+        <div class="triptych">
+          <figure><img src="images/ros2-1.jpg" alt="Sim"><figcaption>Sim grid</figcaption></figure>
+          <figure><img src="images/ros2-2.jpg" alt="Planner"><figcaption>Planner</figcaption></figure>
+          <figure><img src="images/ros2-3.jpg" alt="Swarm"><figcaption>Swarm</figcaption></figure>
+        </div>
+      </article>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <article class="card">
+        <h3>Comet Aerobotics (AIAA) — NASA Lunabotics</h3>
+        <p><strong>Role:</strong> Electrical Team Lead</p>
+        <p>Led power and CAN communications architecture; implemented ESP32–CAN network and system power redesign to improve reliability.</p>
+        <div class="triptych">
+          <figure><img src="images/luna-1.jpg" alt="Harness"><figcaption>Wiring harness</figcaption></figure>
+          <figure><img src="images/luna-2.jpg" alt="CAN"><figcaption>CAN debug</figcaption></figure>
+          <figure><img src="images/luna-3.jpg" alt="System test"><figcaption>System test</figcaption></figure>
+        </div>
+      </article>
+      <article class="card">
+        <h3>Humanoid Biorobotics (HBS Lab)</h3>
+        <p><strong>Role:</strong> Research Assistant</p>
+        <p>Fabricated and tested twisted‑coiled polymer actuators; performed thermal response experiments and MATLAB modeling.</p>
+        <div class="triptych">
+          <figure><img src="images/hbs-1.jpg" alt="TCP"><figcaption>TCP samples</figcaption></figure>
+          <figure><img src="images/hbs-2.jpg" alt="Rig"><figcaption>Test rig</figcaption></figure>
+          <figure><img src="images/hbs-3.jpg" alt="Plot"><figcaption>Thermal plot</figcaption></figure>
+        </div>
+      </article>
+      <article class="card">
+        <h3>RIDE Lab — Orthotic Design</h3>
+        <p><strong>Role:</strong> Team Lead</p>
+        <p>Built EMG‑sensed wrist assist; kinematics & torque modeling with MATLAB and Onshape; integrated sensing & actuation for assistive motions.</p>
+        <div class="triptych">
+          <figure><img src="images/ride-1.jpg" alt="CAD"><figcaption>CAD model</figcaption></figure>
+          <figure><img src="images/ride-2.jpg" alt="EMG"><figcaption>EMG test</figcaption></figure>
+          <figure><img src="images/ride-3.jpg" alt="Bench rig"><figcaption>Bench rig</figcaption></figure>
+        </div>
+      </article>
+      <article class="card">
+        <h3>Accessible Prosthetics Initiative</h3>
+        <p><strong>Role:</strong> Electrical Member</p>
+        <p>Implemented ESP32 firmware, power regulation, and gesture control for EMG‑driven prosthetic hand.</p>
+        <div class="triptych">
+          <figure><img src="images/api-1.jpg" alt="Power PCB"><figcaption>Power PCB</figcaption></figure>
+          <figure><img src="images/api-2.jpg" alt="ESP32 stack"><figcaption>ESP32 stack</figcaption></figure>
+          <figure><img src="images/api-3.jpg" alt="Prototype"><figcaption>Prototype</figcaption></figure>
+        </div>
+      </article>
+      <article class="card">
+        <h3>EPICS Project</h3>
+        <p><strong>Role:</strong> Student Engineer</p>
+        <p>Community‑focused engineering project. Replace this with a concise, impact‑oriented summary.</p>
+        <div class="triptych">
+          <figure><img src="images/epics-1.jpg" alt="EPICS 1"><figcaption>Caption 1</figcaption></figure>
+          <figure><img src="images/epics-2.jpg" alt="EPICS 2"><figcaption>Caption 2</figcaption></figure>
+          <figure><img src="images/epics-3.jpg" alt="EPICS 3"><figcaption>Caption 3</figcaption></figure>
+        </div>
+      </article>
+      <article class="card">
+        <h3>IEEE Project</h3>
+        <p><strong>Role:</strong> Member / Lead</p>
+        <p>Technical build for IEEE; add goals, tools, and measurable outcomes.</p>
+        <div class="triptych">
+          <figure><img src="images/ieee-1.jpg" alt="IEEE 1"><figcaption>Caption 1</figcaption></figure>
+          <figure><img src="images/ieee-2.jpg" alt="IEEE 2"><figcaption>Caption 2</figcaption></figure>
+          <figure><img src="images/ieee-3.jpg" alt="IEEE 3"><figcaption>Caption 3</figcaption></figure>
+        </div>
+      </article>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:vtt230000@utdallas.edu">vtt230000@utdallas.edu</a> | <a href="https://linkedin.com/in/vantrn" target="_blank">LinkedIn</a> | <a href="https://github.com/vantrn" target="_blank">GitHub</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Van Tran</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const id=a.getAttribute('href').slice(1);
+        const el=document.getElementById(id);
+        if(el){e.preventDefault();document.querySelectorAll('.links a').forEach(x=>x.classList.remove('active'));a.classList.add('active');el.scrollIntoView({behavior:'smooth', block:'start'});}
+      });
+    });
+  </script>
+</body>
+</html>
