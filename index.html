@@ -35,6 +35,7 @@
     .pfp{width:220px;height:220px;border-radius:20px;background:var(--panel);border:1px solid var(--line);overflow:hidden;display:grid;place-items:center;font-size:72px}
     .pfp img{width:100%;height:100%;object-fit:cover}
     .triptych{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+    .duo {display: grid;grid-template-columns: repeat(2, 1fr);gap: 12px;margin-top: 12px;margin-left: 8%;margin-right: 8%;}
     figure img{width:100%;height:160px;object-fit:cover;border-radius:12px;border:1px solid var(--line)}
     figure figcaption{text-align:center;color:var(--muted);font-size:12px;margin-top:6px}
     footer{border-top:1px solid var(--line);color:var(--muted);text-align:center;padding:28px 0;margin-top:40px}
@@ -91,11 +92,37 @@
       </article>
       <article class="card">
         <h3>Probabilistic UAV Trajectory Prediction</h3>
-        <p>Diffusion model trained on EKF‑filtered flight logs; reduced mean trajectory error vs. baseline.</p>
+        <p>
+        A 3D aerospace simulation combining 
+        <strong>classical control theory</strong> with 
+        <strong>modern diffusion models</strong>.
+      </p>
+      <p>
+        It uses a diffusion-based denoiser to stabilize nonlinear sensor noise before EKF fusion, 
+        enabling robust target tracking and guidance.
+      </p>
+      <ul>
+        <li><strong>Tracker:</strong> UAV tracking a moving ground object (like a race car)</li>
+        <li><strong>Follow:</strong> Rocket pursuit using PD guidance</li>
+        <li><strong>Intercept:</strong> Defensive rocket intercept using Proportional Navigation (PN)</li>
+      </ul>
+      <p>
+        Real-time <strong>3D</strong> and <strong>2D visualizations</strong> show how diffusion improves estimation accuracy and stability.
+      </p>
         <div class="triptych">
-          <figure><img src="images/uv-1.jpg" alt="Dataset"><figcaption>Dataset</figcaption></figure>
-          <figure><img src="images/uv-2.jpg" alt="Training"><figcaption>Training</figcaption></figure>
-          <figure><img src="images/uv-3.jpg" alt="Results"><figcaption>Results</figcaption></figure>
+          <figure><img src="images/UAV_Diff_T1.png" alt="EMG build"><figcaption>3D (angle A): UAV (green) flying a quarter-circle arc while tracking a ground target (blue). Diffusion-EKF estimate (orange) stays aligned.</figcaption></figure>
+          <figure><img src="images/UAV_Diff_T2.png" alt="PCB"><figcaption>3D (angle B): Alternate angle highlighting stability through the turn.</figcaption></figure>
+          <figure><img src="images/UAV_Diff_T_Chart.png" alt="Arm test"><figcaption>2D Metrics: Position/velocity errors and NEES show bounded estimation.</figcaption></figure>
+        </div>
+        <div class="triptych">
+          <figure><img src="images/UAV_Diff_F1.png" alt="EMG build"><figcaption>3D (angle A): Pursuer (green) following target (blue) with smooth PD turns via diffusion-stabilized EKF (orange).</figcaption></figure>
+          <figure><img src="images/UAV_Diff_F2.png" alt="PCB"><figcaption>3D (angle B): Alternate perspective showing steady convergence.</figcaption></figure>
+          <figure><img src="images/UAV_Diff_F_Chart.png" alt="Arm test"><figcaption>2D Metrics: Range decreases, closing speed stabilizes, accel bounded.</figcaption></figure>
+        </div>
+        <div class="triptych">
+          <figure><img src="images/UAV_Diff_I1.png" alt="EMG build"><figcaption>3D (angle A): Launch-on-close intercept — our rocket (green) leads target (blue); orange EKF matches true path.</figcaption></figure>
+          <figure><img src="images/UAV_Diff_I2.png" alt="PCB"><figcaption>3D (angle B): Rotated view showing intercept point where green meets blue.</figcaption></figure>
+          <figure><img src="images/UAV_Diff_I_Chart.png" alt="Arm test"><figcaption>2D Metrics: Range-to-go drops sharply; closing speed flips near impact.t</figcaption></figure>
         </div>
       </article>
       <article class="card">
@@ -125,11 +152,6 @@
         <h3>Humanoid Biorobotics (HBS Lab)</h3>
         <p><strong>Role:</strong> Research Assistant</p>
         <p>Fabricated and tested twisted‑coiled polymer actuators; performed thermal response experiments and MATLAB modeling.</p>
-        <div class="triptych">
-          <figure><img src="images/hbs-1.jpg" alt="TCP"><figcaption>TCP samples</figcaption></figure>
-          <figure><img src="images/hbs-2.jpg" alt="Rig"><figcaption>Test rig</figcaption></figure>
-          <figure><img src="images/hbs-3.jpg" alt="Plot"><figcaption>Thermal plot</figcaption></figure>
-        </div>
         <div class="triptych">
           <figure><img src="images/HBS_TCP_Create.jpeg" alt="TCP"><figcaption>TCP samples</figcaption></figure>
           <figure><img src="images/HBS_TCP_Train.png" alt="Rig"><figcaption>Test rig</figcaption></figure>
