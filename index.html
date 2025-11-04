@@ -110,19 +110,19 @@
         Real-time <strong>3D</strong> and <strong>2D visualizations</strong> show how diffusion improves estimation accuracy and stability.
       </p>
         <div class="triptych">
-          <figure><img src="images/UAV_Diff_T1.png" alt="EMG build"><figcaption>3D (angle A): UAV (green) flying a quarter-circle arc while tracking a ground target (blue). Diffusion-EKF estimate (orange) stays aligned.</figcaption></figure>
-          <figure><img src="images/UAV_Diff_T2.png" alt="PCB"><figcaption>3D (angle B): Alternate angle highlighting stability through the turn.</figcaption></figure>
-          <figure><img src="images/UAV_Diff_T_Chart.png" alt="Arm test"><figcaption>2D Metrics: Position/velocity errors and NEES show bounded estimation.</figcaption></figure>
+          <figure><img src="images/UAV_Diff_T1.png" alt="Tracker Graph 1"><figcaption>3D (angle A): UAV (green) flying a quarter-circle arc while tracking a ground target (blue). Diffusion-EKF estimate (orange) stays aligned.</figcaption></figure>
+          <figure><img src="images/UAV_Diff_T2.png" alt="Tracker Graph 2"><figcaption>3D (angle B): Alternate angle highlighting stability through the turn.</figcaption></figure>
+          <figure><img src="images/UAV_Diff_T_Chart.png" alt="Tracker Graph 3"><figcaption>2D Metrics: Position/velocity errors and NEES show bounded estimation.</figcaption></figure>
         </div>
         <div class="triptych">
-          <figure><img src="images/UAV_Diff_F1.png" alt="EMG build"><figcaption>3D (angle A): Pursuer (green) following target (blue) with smooth PD turns via diffusion-stabilized EKF (orange).</figcaption></figure>
-          <figure><img src="images/UAV_Diff_F2.png" alt="PCB"><figcaption>3D (angle B): Alternate perspective showing steady convergence.</figcaption></figure>
-          <figure><img src="images/UAV_Diff_F_Chart.png" alt="Arm test"><figcaption>2D Metrics: Range decreases, closing speed stabilizes, accel bounded.</figcaption></figure>
+          <figure><img src="images/UAV_Diff_F1.png" alt="Follower Graph 1"><figcaption>3D (angle A): Pursuer (green) following target (blue) with smooth PD turns via diffusion-stabilized EKF (orange).</figcaption></figure>
+          <figure><img src="images/UAV_Diff_F2.png" alt="Follower Graph 2"><figcaption>3D (angle B): Alternate perspective showing steady convergence.</figcaption></figure>
+          <figure><img src="images/UAV_Diff_F_Chart.png" alt="Follower Graph 3"><figcaption>2D Metrics: Range decreases, closing speed stabilizes, accel bounded.</figcaption></figure>
         </div>
         <div class="triptych">
-          <figure><img src="images/UAV_Diff_I1.png" alt="EMG build"><figcaption>3D (angle A): Launch-on-close intercept — our rocket (green) leads target (blue); orange EKF matches true path.</figcaption></figure>
-          <figure><img src="images/UAV_Diff_I2.png" alt="PCB"><figcaption>3D (angle B): Rotated view showing intercept point where green meets blue.</figcaption></figure>
-          <figure><img src="images/UAV_Diff_I_Chart.png" alt="Arm test"><figcaption>2D Metrics: Range-to-go drops sharply; closing speed flips near impact.t</figcaption></figure>
+          <figure><img src="images/UAV_Diff_I1.png" alt="Intercepter Graph 1"><figcaption>3D (angle A): Launch-on-close intercept — our rocket (green) leads target (blue); orange EKF matches true path.</figcaption></figure>
+          <figure><img src="images/UAV_Diff_I2.png" alt="Intercepter Graph 2"><figcaption>3D (angle B): Rotated view showing intercept point where green meets blue.</figcaption></figure>
+          <figure><img src="images/UAV_Diff_I_Chart.png" alt="Intercepter Graph 3"><figcaption>2D Metrics: Range-to-go drops sharply; closing speed flips near impact.t</figcaption></figure>
         </div>
       </article>
       <article class="card">
@@ -143,9 +143,14 @@
         <p><strong>Role:</strong> Electrical Team Lead</p>
         <p>Led power and CAN communications architecture; implemented ESP32–CAN network and system power redesign to improve reliability.</p>
         <div class="triptych">
-          <figure><img src="images/luna-1.jpg" alt="Harness"><figcaption>Wiring harness</figcaption></figure>
-          <figure><img src="images/luna-2.jpg" alt="CAN"><figcaption>CAN debug</figcaption></figure>
-          <figure><img src="images/luna-3.jpg" alt="System test"><figcaption>System test</figcaption></figure>
+          <figure><img src="images/CA_Early_Design.png" alt="Harness"><figcaption>Pre-Season early design</figcaption></figure>
+          <figure><img src="images/CA_Model_1.png" alt="CAN"><figcaption>Early Model of the Electrical Box</figcaption></figure>
+          <figure><img src="images/CA_Model_2.png" alt="System test"><figcaption>Model 2 of the early Electrical Box</figcaption></figure>
+        </div>
+        <div class="triptych">
+          <figure><img src="images/CA_Box_25.png" alt="Electrical Box"><figcaption>Current Electrical Box Design</figcaption></figure>
+          <figure><img src="images/CA_Early_Schematic.png" alt="Electrical Schematic"><figcaption>Early Schematic of the Electrical Box</figcaption></figure>
+          <figure><img src="images/CA_ESP32_CAN_PCB.png" alt="ESP32 and CAN PCB"><figcaption>ESP32 and CAN transceiver PCB created to reduce amount of wires and increase connection strength</figcaption></figure>
         </div>
       </article>
       <article class="card">
@@ -173,9 +178,9 @@
         <p><strong>Role:</strong> Electrical Member</p>
         <p>Implemented ESP32 firmware, power regulation, and gesture control for EMG‑driven prosthetic hand.</p>
         <div class="triptych">
-          <figure><img src="images/api-1.jpg" alt="Power PCB"><figcaption>Power PCB</figcaption></figure>
-          <figure><img src="images/api-2.jpg" alt="ESP32 stack"><figcaption>ESP32 stack</figcaption></figure>
-          <figure><img src="images/api-3.jpg" alt="Prototype"><figcaption>Prototype</figcaption></figure>
+          <figure><img src="images/API_Arm_Front.jpg" alt="Arm Front"><figcaption>Front of Proshetic Arm</figcaption></figure>
+          <figure><img src="images/API_Arm_Back.jpg" alt="Arm Back"><figcaption>Back of Prosthetic Arm</figcaption></figure>
+          <figure><img src="images/API_Arm_Side.jpg" alt="Arm Side"><figcaption>Side of Prosthetic Arm with ESP32 stack and connectors</figcaption></figure>
         </div>
       </article>
       <article class="card">
