@@ -8,38 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#0e1216;
-      --panel:#141a20;
-      --elev:#182129;
-      --fg:#e8edf2;
-      --muted:#a4b0ba;
-      --line:#24303a;
-      --accent:#8bd3ff;
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:Inter,system-ui,sans-serif;color:var(--fg);background:linear-gradient(120deg,#0f1318 0%,#0e1216 40%,#101820 100%);padding-top:72px}
-    .container{max-width:1100px;margin:0 auto;padding:24px}
-    header{position:fixed;top:0;left:0;width:100%;backdrop-filter:blur(10px);background:rgba(14,18,22,.65);border-bottom:1px solid var(--line);z-index:50}
-    nav{display:flex;justify-content:space-between;align-items:center}
-    .links{display:flex;gap:24px}
-    .links a{color:var(--muted);padding:10px 14px;border-radius:10px;text-decoration:none}
-    .links a:hover,.links a.active{color:var(--fg);background:rgba(255,255,255,0.06)}
-    section{padding:40px 0; scroll-margin-top:96px}
-    h1{font-size:40px;margin-bottom:10px}
-    h2{font-size:24px;margin-bottom:18px}
-    .card{background:var(--elev);border:1px solid var(--line);border-radius:18px;padding:18px;margin-bottom:20px}
-    /* About layout */
-    .about-wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:start}
-    .pfp{width:220px;height:220px;border-radius:20px;background:var(--panel);border:1px solid var(--line);overflow:hidden;display:grid;place-items:center;font-size:72px}
-    .pfp img{width:100%;height:100%;object-fit:cover}
-    .triptych{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
-    .duo {display: grid;grid-template-columns: repeat(2, 1fr);gap: 12px;margin-top: 12px;margin-left: 8%;margin-right: 8%;}
-    figure img{width:100%;height:270px;object-fit:cover;border-radius:12px;border:1px solid var(--line)}
-    figure figcaption{text-align:center;color:var(--muted);font-size:12px;margin-top:6px}
-    footer{border-top:1px solid var(--line);color:var(--muted);text-align:center;padding:28px 0;margin-top:40px}
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
@@ -62,15 +31,48 @@
         <div>
           <h1>Van Tran</h1>
           <p class="meta" style="margin:6px 0 14px">Aspiring Control & Autonomous Systems Engineer</p>
+
+          <!-- Summary (updated) -->
           <div class="card">
             <h2>Summary</h2>
-            <p>Computer Engineering student at UTD (’27). I build real‑time control and autonomy systems that bridge hardware and software — from EMG‑controlled prosthetics to ROS2 multi‑drone coordination.</p>
+            <p>
+              Computer Engineering student at UTD (’27) focused on embedded hardware, control systems, and autonomous robotics.
+              I build systems that bridge firmware and physical hardware — from EMG-controlled prosthetics to ROS2 multi-drone
+              coordination and probabilistic UAV trajectory modeling. Comfortable moving between PCB design and lab debugging
+              (oscilloscope, logic analyzer) and real-time software in C/C++/Python, MATLAB/Simulink, and ROS2. Seeking roles
+              where system modeling meets hands-on integration and closed-loop autonomy.
+            </p>
+            <ul class="pill-list" aria-label="skills">
+              <li>Embedded Systems</li>
+              <li>Control & Estimation</li>
+              <li>ROS2</li>
+              <li>PCB Design (Altium)</li>
+              <li>Python / C/C++</li>
+              <li>MATLAB / Simulink</li>
+            </ul>
           </div>
-          <div class="card">
+
+          <!-- Education (updated) -->
+          <div class="card edu-item">
             <h2>Education</h2>
-            <p>University of Texas at Dallas — B.S. Computer Engineering (Expected 2027)</p>
+            <h3 class="edu-title">University of Texas at Dallas</h3>
+            <div class="edu-meta">
+              <span>B.S. in Computer Engineering</span>
+              <span>Expected May 2027</span>
+              <span>Richardson, TX</span>
+            </div>
+            <p class="edu-highlights">
+              Major coursework: Embedded Systems, Control Systems, Signals & Systems, Digital Design,
+              Computer Architecture, Data Structures & Algorithms.
+            </p>
+            <ul class="edu-list">
+              <li>Electrical Lead, Comet Aerobotics — designed power and CAN subsystems for a lunar rover platform.</li>
+              <li>Projects: EMG-controlled prosthetic arm, ROS2 multi-drone coordination, UAV trajectory modeling.</li>
+              <li>Tools: Altium, MATLAB/Simulink, ROS2, Python/C/C++, Git, oscilloscope and logic analyzer.</li>
+            </ul>
           </div>
         </div>
+
         <div>
           <div class="pfp" aria-label="avatar" title="Your photo">
             <img src="photo.jpg" alt="Van Tran" onerror="this.outerHTML='👋'" />
@@ -82,8 +84,8 @@
     <section id="projects">
       <h2>Projects</h2>
       <article class="card">
-        <h3>EMG‑Controlled Prosthetic Arm</h3>
-        <p>ESP32 + EMG (uMyo) for muscle‑based control; analog/digital filtering reduced latency ~25%.</p>
+        <h3>EMG-Controlled Prosthetic Arm</h3>
+        <p>ESP32 + EMG (uMyo) for muscle-based control; analog/digital filtering reduced latency ~25%.</p>
         <div class="triptych">
           <figure><img src="images/emg-1.jpg" alt="EMG build"><figcaption>Sensor placement</figcaption></figure>
           <figure><img src="images/emg-2.jpg" alt="PCB"><figcaption>Driver/PCB</figcaption></figure>
@@ -93,22 +95,22 @@
       <article class="card">
         <h3>Probabilistic UAV Trajectory Prediction</h3>
         <p>
-        A 3D aerospace simulation combining 
-        <strong>classical control theory</strong> with 
-        <strong>modern diffusion models</strong>.
-      </p>
-      <p>
-        It uses a diffusion-based denoiser to stabilize nonlinear sensor noise before EKF fusion, 
-        enabling robust target tracking and guidance.
-      </p>
-      <ul>
-        <li><strong>Tracker:</strong> UAV tracking a moving ground object (like a race car)</li>
-        <li><strong>Follow:</strong> Rocket pursuit using PD guidance</li>
-        <li><strong>Intercept:</strong> Defensive rocket intercept using Proportional Navigation (PN)</li>
-      </ul>
-      <p>
-        Real-time <strong>3D</strong> and <strong>2D visualizations</strong> show how diffusion improves estimation accuracy and stability.
-      </p>
+          A 3D aerospace simulation combining
+          <strong>classical control theory</strong> with
+          <strong>modern diffusion models</strong>.
+        </p>
+        <p>
+          It uses a diffusion-based denoiser to stabilize nonlinear sensor noise before EKF fusion,
+          enabling robust target tracking and guidance.
+        </p>
+        <ul>
+          <li><strong>Tracker:</strong> UAV tracking a moving ground object (like a race car)</li>
+          <li><strong>Follow:</strong> Rocket pursuit using PD guidance</li>
+          <li><strong>Intercept:</strong> Defensive rocket intercept using Proportional Navigation (PN)</li>
+        </ul>
+        <p>
+          Real-time <strong>3D</strong> and <strong>2D visualizations</strong> show how diffusion improves estimation accuracy and stability.
+        </p>
         <div class="triptych">
           <figure><img src="images/UAV_Diff_T1.png" alt="Tracker Graph 1"><figcaption>3D (angle A): UAV (green) flying a quarter-circle arc while tracking a ground target (blue). Diffusion-EKF estimate (orange) stays aligned.</figcaption></figure>
           <figure><img src="images/UAV_Diff_T2.png" alt="Tracker Graph 2"><figcaption>3D (angle B): Alternate angle highlighting stability through the turn.</figcaption></figure>
@@ -126,8 +128,8 @@
         </div>
       </article>
       <article class="card">
-        <h3>ROS2 Multi‑Drone Coordination</h3>
-        <p>DDS‑based formation control & collision avoidance with dynamic waypoints.</p>
+        <h3>ROS2 Multi-Drone Coordination</h3>
+        <p>DDS-based formation control & collision avoidance with dynamic waypoints.</p>
         <div class="triptych">
           <figure><img src="images/ros2-1.jpg" alt="Sim"><figcaption>Sim grid</figcaption></figure>
           <figure><img src="images/ros2-2.jpg" alt="Planner"><figcaption>Planner</figcaption></figure>
