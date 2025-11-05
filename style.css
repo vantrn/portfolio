@@ -89,3 +89,19 @@ footer{border-top:1px solid var(--line);color:var(--muted);text-align:center;pad
 .edu-highlights{ margin:.25rem 0 .5rem; max-width:70ch; }
 .edu-list{ margin:.25rem 0 0 1.1rem; padding:0; }
 .edu-list li{ margin:.3rem 0; line-height:1.5; }
+
+.video-wrap {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  max-width: 960px;
+  margin: 0 auto;
+}
+.video-wrap video {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #000;
+}
