@@ -11,12 +11,8 @@
   --muted:#5e6a75;
   --line:#d7e0e8;
   --accent:#0a66ff;
-  --accent-muted:#e7efff;
-  --link:#0a66ff;
-  --link-hover:#0749c9;
-  --shadow:0 8px 24px rgba(2,12,27,.08);
 
-  --header-bg:rgba(255,255,255,.78);
+  --header-bg:rgba(255,255,255,.75);
   --header-blur:blur(10px);
 }
 
@@ -29,12 +25,8 @@
   --muted:#a4b0ba;
   --line:#24303a;
   --accent:#8bd3ff;
-  --accent-muted:rgba(139,211,255,.12);
-  --link:#9ed6ff;
-  --link-hover:#c9ecff;
-  --shadow:0 10px 28px rgba(0,0,0,.35);
 
-  --header-bg:rgba(14,18,22,.62);
+  --header-bg:rgba(14,18,22,.60);
   --header-blur:blur(10px);
 }
 
@@ -42,20 +34,19 @@
    GLOBAL
    ========================================================= */
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%}
 
 body{
   font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
   color:var(--fg);
   background:var(--bg);
   transition:background .35s ease,color .35s ease;
-  padding-top:72px; /* space for fixed header */
+  padding-top:72px;               /* fixed header space */
 }
 
-a{color:var(--link);text-decoration:none}
-a:hover{color:var(--link-hover);text-decoration:underline;text-underline-offset:2px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:2px}
 
-.container{max-width:1100px;margin:0 auto;padding:0 24px}
+.container{max-width:1100px;margin:0 auto;padding:24px}
 
 h1{font-size:40px;margin-bottom:10px;letter-spacing:-.01em}
 h2{font-size:24px;margin-bottom:18px}
@@ -63,122 +54,110 @@ h3{font-size:20px;font-weight:700}
 section{padding:40px 0;scroll-margin-top:96px}
 
 /* =========================================================
-   HEADER / NAV (brand left, menu right)
+   HEADER (brand left, menu right)
    ========================================================= */
 header{
-  position:fixed;inset:0 0 auto 0;height:72px;
+  position:fixed;top:0;left:0;right:0;height:72px;
   display:flex;align-items:center;
   backdrop-filter:var(--header-blur);
   background:var(--header-bg);
   border-bottom:1px solid var(--line);
   z-index:50;
 }
+header .container{width:100%;display:flex;align-items:center}
 
-nav{display:flex;align-items:center;gap:16px;width:100%}
+nav{display:flex;align-items:center;width:100%}
+
+/* brand pinned left */
 .logo{
   font-weight:800;letter-spacing:-.01em;color:var(--fg);
-  text-decoration:none;white-space:nowrap;margin-right:auto; /* pin left */
-}
-.links{
-  margin-left:auto;              /* shove menu to the right */
-  display:flex;align-items:center;gap:22px;
-}
-.links a{
-  color:var(--muted);padding:10px 14px;border-radius:10px;
-  transition:background .2s ease,color .2s ease;text-decoration:none;
-}
-.links a:hover,.links a.active{
-  color:var(--fg);
-  background:color-mix(in oklab,var(--elev) 65%,transparent);
+  text-decoration:none;white-space:nowrap;margin-right:auto;
 }
 
-/* Theme toggle button */
+/* menu pinned right */
+.links{display:flex;align-items:center;gap:22px;margin-left:auto}
+.links a{color:var(--muted);padding:10px 14px;border-radius:10px;transition:background .2s,color .2s}
+.links a:hover,.links a.active{color:var(--fg);background:rgba(0,0,0,.06)}
+[data-theme="dark"] .links a:hover,[data-theme="dark"] .links a.active{background:rgba(255,255,255,.06)}
+
+/* theme toggle */
 #theme-toggle{
-  background:none;border:1px solid var(--line);
-  border-radius:10px;cursor:pointer;
-  font-size:18px;line-height:1;padding:10px 12px;color:var(--muted);
-  transition:transform .15s ease,color .2s ease,background .2s ease,border-color .2s ease;
+  background:none;border:1px solid var(--line);border-radius:10px;
+  cursor:pointer;font-size:18px;line-height:1;padding:10px 12px;color:var(--muted);
+  transition:transform .15s,color .2s,background .2s,border-color .2s
 }
-#theme-toggle:hover{
-  transform:scale(1.06);color:var(--fg);
-  background:color-mix(in oklab,var(--panel) 70%,transparent);
-  border-color:var(--accent);
-}
+#theme-toggle:hover{transform:scale(1.06);color:var(--fg);border-color:var(--accent);background:rgba(0,0,0,.04)}
+[data-theme="dark"] #theme-toggle:hover{background:rgba(255,255,255,.06)}
 
-/* Content links a bit brighter in dark mode for readability */
+/* in-content links brighter in dark mode */
 [data-theme="dark"] main a{color:#9ed6ff}
 [data-theme="dark"] main a:hover{color:#c9ecff}
 
 /* =========================================================
-   CARDS / COMMON BLOCKS
+   CARDS / COMMON
    ========================================================= */
 .card{
   background:var(--panel);
   border:1px solid var(--line);
   border-radius:18px;
-  padding:18px;margin-bottom:20px;
-  box-shadow:var(--shadow);
+  padding:18px;
+  margin-bottom:20px;
 }
+
 .card hr{border:none;border-top:1px solid var(--line);margin:16px 0}
+
+/* bullets readable & aligned */
+.card ul{margin:10px 0 10px 28px;padding-left:4px;line-height:1.6}
+.card li{margin-bottom:6px}
 .card p{margin-bottom:6px}
 .card strong{color:var(--fg)}
 
-/* Lists in cards: readable & aligned */
-.card ul{
-  margin:10px 0 10px 28px;  /* push bullets inward */
-  padding-left:4px;line-height:1.6;
-}
-.card li{margin-bottom:6px}
-
-/* “Skills:” line */
+/* “Skills:” lines */
 .card .skills{margin-top:12px;font-weight:600;line-height:1.55}
 
-/* Optional pill list */
-.skillset{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-.skillset .chip{
-  display:inline-block;padding:6px 10px;border-radius:999px;
-  font-size:12px;color:var(--fg);
-  background:var(--accent-muted);border:1px solid var(--line)
-}
-
 /* =========================================================
-   ABOUT + PHOTO
+   ABOUT with photo (restored working behavior)
    ========================================================= */
 .about-wrap{
-  display:grid;grid-template-columns:1.5fr .7fr;
+  display:grid;
+  grid-template-columns:1.5fr .7fr;  /* wider text column */
   gap:48px;align-items:start;
 }
 .pfp{
-  width:100%;max-width:360px;border-radius:20px;background:var(--panel);
-  border:1px solid var(--line);overflow:hidden;box-shadow:var(--shadow);
-  margin-top:30px;
+  width:100%;max-width:360px;border-radius:20px;
+  background:var(--panel);border:1px solid var(--line);
+  overflow:hidden;margin-top:30px;
 }
 .pfp img{width:100%;height:auto;object-fit:cover;display:block}
 
 /* =========================================================
-   MEDIA GRIDS & VIDEO
+   MEDIA GRIDS (restored)
    ========================================================= */
-.triptych{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
-.duo{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:12px;margin-left:8%;margin-right:8%}
+.triptych{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:12px;margin-top:12px
+}
+.duo{
+  display:grid;grid-template-columns:repeat(2,1fr);
+  gap:12px;margin-top:12px;margin-left:8%;margin-right:8%;
+}
 figure img{
-  width:100%;height:270px;object-fit:cover;border-radius:12px;border:1px solid var(--line);background:#000
+  width:100%;height:270px;object-fit:cover;
+  border-radius:12px;border:1px solid var(--line);background:#000
 }
 figure figcaption{text-align:center;color:var(--muted);font-size:12px;margin-top:6px}
 
+/* videos (restored) */
 .video-wrap{
   border:1px solid var(--line);background:var(--panel);
-  border-radius:12px;overflow:hidden;box-shadow:var(--shadow);
-  max-width:960px;margin:0 auto;
+  border-radius:12px;overflow:hidden;max-width:960px;margin:0 auto
 }
 .video-wrap video{display:block;width:100%;height:auto;background:#000}
 
 /* =========================================================
    FOOTER
    ========================================================= */
-footer{
-  border-top:1px solid var(--line);color:var(--muted);
-  text-align:center;padding:28px 0;margin-top:40px;
-}
+footer{border-top:1px solid var(--line);color:var(--muted);text-align:center;padding:28px 0;margin-top:40px}
 
 /* =========================================================
    RESPONSIVE
@@ -191,7 +170,6 @@ footer{
   .triptych{grid-template-columns:1fr}
   .duo{grid-template-columns:1fr;margin-left:0;margin-right:0}
   .links{gap:14px}
-  .logo{padding-right:16px}
   h1{font-size:34px}
   h2{font-size:22px}
 }
