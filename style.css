@@ -180,7 +180,7 @@ footer{border-top:1px solid var(--line);color:var(--muted);text-align:center;pad
 }
 
 .card p {
-  margin-bottom: 10px;        /* extra breathing room between text blocks */
+  margin-bottom: 6px;        /* extra breathing room between text blocks */
 }
 
 .card strong {
