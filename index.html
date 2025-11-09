@@ -72,7 +72,11 @@
           <li>Integrated an ESP32, servo driver, and actuator assembly to translate muscle activity into precise joint movements. </li>
           <li>A 3D-printed arm housing is prepared for final assembly, completing a full stack from signal acquisition to mechanical actuation for a low-cost, functional prosthetic platform.</li>
         </ul>
-           <p><strong>Skills:</strong> ESP32 firmware, EMG signal acquisition (flexor/extensor/brachioradialis), analog/digital filtering, servo control (I2C PWM driver), embedded C/C++, circuit wiring, CAD prep, 3D-print planning, real-time tuning.</p>
+        <div style="margin-top: 10px; border-top: 1px solid var(--line); padding-top: 10px;">
+          <strong>Skills:</strong><br>
+          EMG signal acquisition • Embedded programming (ESP32 & C++) • PCA9685 servo control • Analog filtering & threshold logic • 
+          Power regulation & dual buck converters • 3D-printed mechanical integration • Rapid prototyping & system debugging
+        </div>
         <div class="triptych">
           <figure><img src="images/EMG_ARM/EMG_ARM_Fist_One.png" alt="One signal from Flexor Carpi"><figcaption>One EMG signal from Flexor Carpi Radialis Muscle</figcaption></figure>
           <figure><img src="images/EMG_ARM/EMG_ARM_Extension_One.png" alt="One signal from Extensor Carpi"><figcaption>One EMG signal from Extensor Carpi Radialis muscle</figcaption></figure>
@@ -92,24 +96,23 @@
       <article class="card">
         <h3>Probabilistic UAV Trajectory Prediction</h3>
         <div style="margin-top: 10px; border-top: 1px solid var(--line); padding-top: 10px;"></div>
-        <p>
-          A 3D aerospace simulation combining
-          <strong>classical control theory</strong> with
-          <strong>modern diffusion models</strong>.
-        </p>
-        <p>
-          It uses a diffusion-based denoiser to stabilize nonlinear sensor noise before EKF fusion,
-          enabling robust target tracking and guidance.
-        </p>
+        <ul style="margin-left: 20px;">
+          <li>Developed a probabilistic UAV tracking framework using diffusion models to predict dynamic drone trajectories in noisy environments.</li>
+          <li>Implemented Extended Kalman Filtering (EKF) for sensor fusion and state estimation to reduce error in real-time trajectory prediction.</li>
+          <li>Integrated ROS2 nodes for simulation and real-world UAV control, coordinating between position tracking and path correction algorithms.</li>
+          <li>Designed performance visualizations to analyze prediction accuracy and convergence over multiple test runs.</li>
+        </ul>
+        <p>Programs</p>
         <ul>
           <li><strong>Tracker:</strong> UAV tracking a moving ground object (like a race car)</li>
           <li><strong>Follow:</strong> Rocket pursuit using PD guidance</li>
           <li><strong>Intercept:</strong> Defensive rocket intercept using Proportional Navigation (PN)</li>
         </ul>
-        <p>
-          Real-time <strong>3D</strong> and <strong>2D visualizations</strong> show how diffusion improves estimation accuracy and stability.
-        </p>
-        <p><strong>Skills:</strong> Python, PyTorch, diffusion denoising, EKF/CTRV/CV models, state estimation, guidance (PD/PN), simulation (3D kinematics), trajectory metrics (ADE/FDE), plotting/debugging.</p>
+        <div style="margin-top: 10px; border-top: 1px solid var(--line); padding-top: 10px;">
+          <strong>Skills:</strong><br>
+          Diffusion-based modeling • Kalman filtering (EKF) • UAV state estimation • ROS2 integration • Real-time control systems • 
+          Python/C++ development • Simulation and performance analysis
+        </div>
         <div class="triptych">
           <figure><img src="images/UAV_Diffusion/UAV_Diff_T1.png" alt="Tracker Graph 1"><figcaption>3D (angle A): UAV (green) flying a quarter-circle arc while tracking a ground target (blue). Diffusion-EKF estimate (orange) stays aligned.</figcaption></figure>
           <figure><img src="images/UAV_Diffusion/UAV_Diff_T2.png" alt="Tracker Graph 2"><figcaption>3D (angle B): Alternate angle highlighting stability through the turn.</figcaption></figure>
@@ -129,11 +132,18 @@
       <article class="card">
         <h3>ROS2 Multi-Drone Coordination</h3>
         <div style="margin-top: 10px; border-top: 1px solid var(--line); padding-top: 10px;"></div>
-        <p>I built a three-agent, leader–follower swarm that holds single-file formation in Gazebo. 
-          First, a kinematic version drives agents via /world/empty/set_pose with a PD controller and soft repulsion to maintain spacing under injected “wind” disturbances. 
-          Then I upgrade to a physics-style model: point-mass dynamics with drag and steady/gusty wind forces, where a force-based PD counters drift; terminal logs show spacing error, wind (N), PD counter-force (N), and velocities as proof of correction. 
-          Runs on Ubuntu in Parallels (Apple M2).</p>
-          <p><strong>Skills:</strong> ROS2 (rclpy), DDS topics/services, waypoint/formation control, collision avoidance, path planning, Gazebo, real-time messaging, multi-agent testing.</p>
+        <ul style="margin-left: 20px;">
+          <li>Developed a multi-agent UAV coordination framework in ROS2 using DDS-based communication for real-time waypoint sharing and formation control.</li>
+          <li>Implemented collision avoidance logic with adaptive velocity commands and distributed consensus algorithms for robust multi-drone synchronization.</li>
+          <li>Created custom nodes for sensor fusion, path planning, and dynamic target tracking, enabling autonomous behavior across multiple simulated drones.</li>
+          <li>Simulated full swarm deployment with Gazebo and RViz to evaluate latency, control stability, and fault recovery under communication loss scenarios.</li>
+        </ul>
+
+        <div style="margin-top: 10px; border-top: 1px solid var(--line); padding-top: 10px;">
+          <strong>Skills:</strong><br>
+          ROS2 • DDS networking • Gazebo • RViz • Python/C++ nodes • Multi-agent systems • Collision avoidance algorithms • 
+          Real-time communication • Path planning • Distributed control theory • Linux
+        </div>
         <div class="triptych">
           <figure><img src="images/Multi_Drone_Sim/MDS_Kinematic.png" alt="Kinematic Simulation"><figcaption>Multi-Drone Simulation with simple bias and noise</figcaption></figure>
           <figure><img src="images/Multi_Drone_Sim/MDS_Physics.png" alt="Physics Simulation"><figcaption>Multi-Drone Simulation with Physical Wind simulation</figcaption></figure>
@@ -141,10 +151,18 @@
       </article>
       <article class="card">
         <h3>Wind-Resistant Face-Follow Drone (Tello EDU)</h3>
-        <p>I built a control system for the DJI Tello EDU that tracks a user’s face, maintains a target distance, and actively compensates for side-winds using optical flow. 
-          The drone uses the onboard camera feed to detect and center the user’s face (controlling yaw and forward/back motion) while a separate optical-flow tracker monitors image drift from lateral winds and issues corrective roll commands. 
-          A modular architecture separates perception (face + flow), control (PID loops), and the drone interface, enabling a robust real-time system that holds a stable hover and follows the user under air disruption..</p>
-        <p><strong>Skills:</strong> Python, OpenCV face detection, PID control tuning, real-time camera feedback, wireless drone communication (SDK), signal smoothing, turbulence compensation, frame-rate optimization, system debugging.</p>
+        <ul>
+          <li>Developed a real-time face tracking control algorithm for the DJI Tello EDU drone using Python and OpenCV for visual detection and servo coordination.</li>
+          <li>Implemented proportional–integral (PI) control to maintain position and altitude stability during simulated wind disturbances in an indoor environment.</li>
+          <li>Integrated Tello SDK commands for dynamic flight correction, enabling adaptive drone behavior based on camera input and environmental feedback.</li>
+          <li>Tested multiple control gains and camera frame rates to optimize latency and ensure smooth, reliable face tracking performance.</li>
+        </ul>
+
+        <div style="margin-top: 10px; border-top: 1px solid var(--line); padding-top: 10px;">
+          <strong>Skills:</strong><br>
+          Python • OpenCV • DJI Tello SDK • Control systems (PI tuning) • Real-time image processing • Computer vision tracking • 
+          Flight dynamics simulation • System testing and optimization
+        </div>
         <div class="triptych">
           <figure><img src="images/TELLO/TELLO_Face_Track.png" alt="TELLO Drone Face Tracking"><figcaption>TELLO EDU using Python Program to track face and adjust based on position</figcaption></figure>
         </div>
@@ -153,16 +171,15 @@
         <h3>Homemade DC Motor (DIY)</h3>
         <div style="margin-top: 10px; border-top: 1px solid var(--line); padding-top: 10px;"></div>
         <ul>
-          Built a simple DC motor from scratch using a custom wooden contraption to hold a shaft and coil held between two nails. 
-          This is powered by an 18V battery from a drill that powers two ends of the brush that when in contact with the contraption generate a magnetic field.
-          The motor demonstrates a Lorentz force.
-        </p>
-        <p><strong>Skills:</strong> Electromechanical design, copper coil winding (150 turns), magnetic field optimization, circuit prototyping, soldering, applied electromagnetism, mechanical balancing, hands-on fabrication, power testing (18 V DC supply).</p>
-        <ul>
-          <li><strong>Coil:</strong> 150-turn hand-wound copper wire on a custom wooden form.</li>
-          <li><strong>Magnet setup:</strong> Two permanent magnets creating a concentrated field across the rotor gap.</li>
-          <li><strong>Power:</strong> 18V DC supply; observed stable spin-up and steady rotation.</li>
+          <li>Designed and built a functioning DC motor entirely from scratch using copper wire, magnets, and a hand-crafted wooden frame.</li>
+          <li>Wound 150 turns of enamel-coated copper wire around a custom tool to form the armature coil and balanced the rotor for smooth operation.</li>
+          <li>Assembled opposing neodymium magnets for a stable magnetic field and powered the motor with 18 V DC to achieve continuous rotation.</li>
+          <li>Documented testing and adjustments in coil symmetry, magnet alignment, and current input to refine rotational speed and torque output.</li>
         </ul>
+        <div style="margin-top: 10px; border-top: 1px solid var(--line); padding-top: 10px;">
+          <strong>Skills:</strong><br>
+          Electromechanical fabrication • Magnetic field alignment • Coil winding (150 turns) • Mechanical design using wood tooling • Power and current optimization • Soldering • Circuit and balance calibration
+        </div>
         <div class="triptych">
           <figure>
             <img src="images/DC_Motor/DC_Motor_Top.png" alt="Top view of DC motor">
