@@ -124,11 +124,22 @@
       </article>
       <article class="card">
         <h3>ROS2 Multi-Drone Coordination</h3>
-        <p>DDS-based formation control & collision avoidance with dynamic waypoints.</p>
+        <p>I built a three-agent, leader–follower swarm that holds single-file formation in Gazebo. 
+          First, a kinematic version drives agents via /world/empty/set_pose with a PD controller and soft repulsion to maintain spacing under injected “wind” disturbances. 
+          Then I upgrade to a physics-style model: point-mass dynamics with drag and steady/gusty wind forces, where a force-based PD counters drift; terminal logs show spacing error, wind (N), PD counter-force (N), and velocities as proof of correction. 
+          Runs on Ubuntu in Parallels (Apple M2).</p>
         <div class="triptych">
-          <figure><img src="images/ros2-1.jpg" alt="Sim"><figcaption>Sim grid</figcaption></figure>
-          <figure><img src="images/ros2-2.jpg" alt="Planner"><figcaption>Planner</figcaption></figure>
-          <figure><img src="images/ros2-3.jpg" alt="Swarm"><figcaption>Swarm</figcaption></figure>
+          <figure><img src="images/Multi_Drone_Sim/MDS_Kinematic.png" alt="Kinematic Simulation"><figcaption>Multi-Drone Simulation with simple bias and noise</figcaption></figure>
+          <figure><img src="images/Multi_Drone_Sim/MDS_Physics.png" alt="Physics Simulation"><figcaption>Multi-Drone Simulation with Physical Wind simulation</figcaption></figure>
+        </div>
+      </article>
+      <article class="card">
+        <h3>Wind-Resistant Face-Follow Drone (Tello EDU)</h3>
+        <p>I built a control system for the DJI Tello EDU that tracks a user’s face, maintains a target distance, and actively compensates for side-winds using optical flow. 
+          The drone uses the onboard camera feed to detect and center the user’s face (controlling yaw and forward/back motion) while a separate optical-flow tracker monitors image drift from lateral winds and issues corrective roll commands. 
+          A modular architecture separates perception (face + flow), control (PID loops), and the drone interface, enabling a robust real-time system that holds a stable hover and follows the user under air disruption..</p>
+        <div class="triptych">
+          <figure><img src="images/TELLO/TELLO_Face_Track.png" alt="TELLO Drone Face Tracking"><figcaption>TELLO EDU using Python Program to track face and adjust based on position</figcaption></figure>
         </div>
       </article>
       <article class="card">
@@ -194,14 +205,14 @@
         <div class="triptych">
           <figure>
             <video controls preload="metadata" poster="images/HBS/HBS_TCP_Create.png" style="border-radius:12px;border:1px solid var(--line);width:100%;height:270px;object-fit:cover;">
-              <source src="videos/HBS_TCP_Create.mp4" type="video/mp4">
+              <source src="videos/Create.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
             <figcaption>Spinning the cable while holding it to create coils.</figcaption>
           </figure>
           <figure>
             <video controls preload="metadata" poster="images/HBS/HBS_TCP_Train.png" style="border-radius:12px;border:1px solid var(--line);width:100%;height:270px;object-fit:cover;">
-              <source src="videos/HBS_TCP_Train.mp4" type="video/mp4">
+              <source src="videos/Train.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
             <figcaption>Training the TCP with 9V</figcaption>
