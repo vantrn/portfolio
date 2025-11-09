@@ -105,3 +105,26 @@ footer{border-top:1px solid var(--line);color:var(--muted);text-align:center;pad
   height: auto;
   background: #000;
 }
+
+.skills-bubbles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.skills-bubbles span {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 6px 12px;
+  color: var(--muted);
+  font-size: 14px;
+  transition: all 0.2s ease-in-out;
+}
+
+.skills-bubbles span:hover {
+  background: var(--accent);
+  color: #0e1216;
+  border-color: var(--accent);
+}

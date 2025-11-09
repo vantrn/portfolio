@@ -97,19 +97,19 @@
           Real-time <strong>3D</strong> and <strong>2D visualizations</strong> show how diffusion improves estimation accuracy and stability.
         </p>
         <div class="triptych">
-          <figure><img src="images/UAV_Diff_T1.png" alt="Tracker Graph 1"><figcaption>3D (angle A): UAV (green) flying a quarter-circle arc while tracking a ground target (blue). Diffusion-EKF estimate (orange) stays aligned.</figcaption></figure>
-          <figure><img src="images/UAV_Diff_T2.png" alt="Tracker Graph 2"><figcaption>3D (angle B): Alternate angle highlighting stability through the turn.</figcaption></figure>
-          <figure><img src="images/UAV_Diff_T_Chart.png" alt="Tracker Graph 3"><figcaption>2D Metrics: Position/velocity errors and NEES show bounded estimation.</figcaption></figure>
+          <figure><img src="images/UAV_Diffusion/UAV_Diff_T1.png" alt="Tracker Graph 1"><figcaption>3D (angle A): UAV (green) flying a quarter-circle arc while tracking a ground target (blue). Diffusion-EKF estimate (orange) stays aligned.</figcaption></figure>
+          <figure><img src="images/UAV_Diffusion/UAV_Diff_T2.png" alt="Tracker Graph 2"><figcaption>3D (angle B): Alternate angle highlighting stability through the turn.</figcaption></figure>
+          <figure><img src="images/UAV_Diffusion/UAV_Diff_T_Chart.png" alt="Tracker Graph 3"><figcaption>2D Metrics: Position/velocity errors and NEES show bounded estimation.</figcaption></figure>
         </div>
         <div class="triptych">
-          <figure><img src="images/UAV_Diff_F1.png" alt="Follower Graph 1"><figcaption>3D (angle A): Pursuer (green) following target (blue) with smooth PD turns via diffusion-stabilized EKF (orange).</figcaption></figure>
-          <figure><img src="images/UAV_Diff_F2.png" alt="Follower Graph 2"><figcaption>3D (angle B): Alternate perspective showing steady convergence.</figcaption></figure>
-          <figure><img src="images/UAV_Diff_F_Chart.png" alt="Follower Graph 3"><figcaption>2D Metrics: Range decreases, closing speed stabilizes, accel bounded.</figcaption></figure>
+          <figure><img src="images/UAV_Diffusion/UAV_Diff_F1.png" alt="Follower Graph 1"><figcaption>3D (angle A): Pursuer (green) following target (blue) with smooth PD turns via diffusion-stabilized EKF (orange).</figcaption></figure>
+          <figure><img src="images/UAV_Diffusion/UAV_Diff_F2.png" alt="Follower Graph 2"><figcaption>3D (angle B): Alternate perspective showing steady convergence.</figcaption></figure>
+          <figure><img src="images/UAV_Diffusion/UAV_Diff_F_Chart.png" alt="Follower Graph 3"><figcaption>2D Metrics: Range decreases, closing speed stabilizes, accel bounded.</figcaption></figure>
         </div>
         <div class="triptych">
-          <figure><img src="images/UAV_Diff_I1.png" alt="Intercepter Graph 1"><figcaption>3D (angle A): Launch-on-close intercept — our rocket (green) leads target (blue); orange EKF matches true path.</figcaption></figure>
-          <figure><img src="images/UAV_Diff_I2.png" alt="Intercepter Graph 2"><figcaption>3D (angle B): Rotated view showing intercept point where green meets blue.</figcaption></figure>
-          <figure><img src="images/UAV_Diff_I_Chart.png" alt="Intercepter Graph 3"><figcaption>2D Metrics: Range-to-go drops sharply; closing speed flips near impact.t</figcaption></figure>
+          <figure><img src="images/UAV_Diffusion/UAV_Diff_I1.png" alt="Intercepter Graph 1"><figcaption>3D (angle A): Launch-on-close intercept — our rocket (green) leads target (blue); orange EKF matches true path.</figcaption></figure>
+          <figure><img src="images/UAV_Diffusion/UAV_Diff_I2.png" alt="Intercepter Graph 2"><figcaption>3D (angle B): Rotated view showing intercept point where green meets blue.</figcaption></figure>
+          <figure><img src="images/UAV_Diffusion/UAV_Diff_I_Chart.png" alt="Intercepter Graph 3"><figcaption>2D Metrics: Range-to-go drops sharply; closing speed flips near impact.t</figcaption></figure>
         </div>
       </article>
       <article class="card">
@@ -132,15 +132,14 @@
           <li><strong>Coil:</strong> 150-turn hand-wound copper wire on a custom wooden form.</li>
           <li><strong>Magnet setup:</strong> Two permanent magnets creating a concentrated field across the rotor gap.</li>
           <li><strong>Power:</strong> 18V DC supply; observed stable spin-up and steady rotation.</li>
-          <li><strong>Next steps:</strong> Add a simple commutator/brush contact, balance the armature, and reduce friction with proper bushings.</li>
         </ul>
         <div class="triptych">
           <figure>
-            <img src="images/DC_Motor_Top.png" alt="Top view of DC motor">
+            <img src="images/DC_Motor/DC_Motor_Top.png" alt="Top view of DC motor">
             <figcaption>Top view — coil alignment between magnet poles.</figcaption>
           </figure>
           <figure>
-            <img src="images/DC_Motor_Side.png" alt="Side view of DC motor setup">
+            <img src="images/DC_Motor/DC_Motor_Side.png" alt="Side view of DC motor setup">
             <figcaption>Side view — handmade wood base with copper coil.</figcaption>
           </figure>
           <figure>
@@ -159,56 +158,87 @@
       <article class="card">
         <h3>Comet Aerobotics (AIAA) — NASA Lunabotics</h3>
         <p><strong>Role:</strong> Electrical Team Lead</p>
+        <p><strong>Contact:</strong>Ian Meyer [ianhmeyer@gmail.com] [214-400-7752]</p>
         <p>Redesigning the rover’s electrical architecture to optimize power distribution, system safety, and communication reliability. 
           Integrated ESP32 microcontrollers with CAN transceivers to create a modular control network supporting autonomous navigation. 
           Designing custom PCBs in Altium for power regulation and relay switching, reducing wiring complexity and improving fault tolerance. 
           Collaborated with mechanical and software teams to ensure full subsystem compatibility during the ongoing system power redesign phase.</p>
         <div class="triptych">
-          <figure><img src="images/CA_Early_Design.png" alt="Harness"><figcaption>Pre-Season early design</figcaption></figure>
-          <figure><img src="images/CA_Model_1.png" alt="CAN"><figcaption>Early Model of the Electrical Box</figcaption></figure>
-          <figure><img src="images/CA_Model_2.png" alt="System test"><figcaption>Model 2 of the early Electrical Box</figcaption></figure>
+          <figure><img src="images/CA/CA_Early_Design.png" alt="Harness"><figcaption>Pre-Season early design</figcaption></figure>
+          <figure><img src="images/CA/CA_Model_1.png" alt="CAN"><figcaption>Early Model of the Electrical Box</figcaption></figure>
+          <figure><img src="images/CA/CA_Model_2.png" alt="System test"><figcaption>Model 2 of the early Electrical Box with Rover</figcaption></figure>
         </div>
         <div class="triptych">
-          <figure><img src="images/CA_Box_25.png" alt="Electrical Box"><figcaption>Current Electrical Box Design</figcaption></figure>
-          <figure><img src="images/CA_Early_Schematic.png" alt="Electrical Schematic"><figcaption>Early Schematic of the Electrical Box</figcaption></figure>
-          <figure><img src="images/CA_ESP32_CAN_PCB.png" alt="ESP32 and CAN PCB"><figcaption>ESP32 and CAN transceiver PCB created to reduce amount of wires and increase connection strength</figcaption></figure>
+          <figure><img src="images/CA/CA_Box_25.png" alt="Electrical Box"><figcaption>Current Electrical Box Design</figcaption></figure>
+          <figure><img src="images/CA/CA_Early_Schematic.png" alt="Electrical Schematic"><figcaption>Early Schematic of the Electrical Box</figcaption></figure>
+          <figure><img src="images/CA/CA_ESP32_CAN_PCB.png" alt="ESP32 and CAN PCB"><figcaption>ESP32 and CAN transceiver PCB created to reduce amount of wires and increase connection strength</figcaption></figure>
         </div>
       </article>
       <article class="card">
         <h3>Humanoid Biorobotics and Smart Systems Lab (HBS Lab)</h3>
         <p><strong>Role:</strong> Research Assistant</p>
+        <p><strong>Contact:</strong>Dr. Yonas Tadesse [Yonas.Tadesse@utdallas.edu] [972-883-4556]</p>
         <p>Conducted experimental research on Twisted and Coiled Polymer (TCP) actuators for use in soft robotics and expressive systems. 
           Fabricated TCP samples, performed thermal and pressure-based characterization, and analyzed contraction behavior through MATLAB-based tracking. 
           Designed and tested setups to measure heating/cooling cycles under variable loads, validating actuator performance for two real-world applications: a soft robotic manipulator and an anthropomorphic robotic face capable of producing facial expressions.</p>
         <div class="triptych">
-          <figure><img src="images/HBS_TCP_Create.jpeg" alt="TCP"><figcaption>TCP samples</figcaption></figure>
-          <figure><img src="images/HBS_TCP_Train.png" alt="Rig"><figcaption>Test rig</figcaption></figure>
-          <figure><img src="images/HBS_TCP_MATLAB.jpg" alt="Plot"><figcaption>Thermal plot</figcaption></figure>
+          <figure>
+            <video controls preload="metadata" poster="images/HBS/HBS_TCP_Create.png" style="border-radius:12px;border:1px solid var(--line);width:100%;height:270px;object-fit:cover;">
+              <source src="videos/HBS_TCP_Create.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <figcaption>Spinning TCP muscle while holding it to induce twists on the strands</figcaption>
+          </figure>
+          <figure>
+            <video controls preload="metadata" poster="images/HBS/HBS_TCP_Train.png" style="border-radius:12px;border:1px solid var(--line);width:100%;height:270px;object-fit:cover;">
+              <source src="videos/HBS_TCP_Train.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <figcaption>TCP Training — 9V</figcaption>
+          </figure>
+          <figure><img src="images/HBS/HBS_TCP_Pressure_Test.png" alt="Plot"><figcaption>TCP healing and cooling test under different pressures</figcaption></figure>
         </div>
         <div class="triptych">
-          <figure><img src="images/t" alt="TCP"><figcaption>TCP samples</figcaption></figure>
-          <figure><img src="images/hbs-2.jpg" alt="Rig"><figcaption>Test rig</figcaption></figure>
-          <figure><img src="images/hbs-3.jpg" alt="Plot"><figcaption>Thermal plot</figcaption></figure>
+          <figure><img src="images/HBS/HBS_TCP_Face.png" alt="TCP Silicone Face"><figcaption>Facial Expressions using TCP under silicone skin mask</figcaption></figure>
+          <figure><img src="images/HBS/HBS_TCP_Robot.png" alt="TCP Robot Arm"><figcaption>Robotic Arm developed with TCP muscles</figcaption></figure>
+          <figure><img src="images/HBS/HBS_TCP_Limb.png" alt="TCP Soft Limb"><figcaption>Soft Robotic Limb using TCP and silicone</figcaption></figure>
         </div>
-      </article>
-      <article class="card">
-        <h3>RIDE Lab — Orthotic Design</h3>
-        <p><strong>Role:</strong> Team Lead</p>
-        <p>Conducting foundational research for a next-generation prosthetic arm aimed at improving accessibility and control for users with partial limb loss. 
-          Focused on benchmarking existing prosthetic technologies, analyzing actuator and joint mechanisms, and preparing design proposals for future prototyping phases. 
-          Collaborated in team presentations translating technical findings into actionable design plans for future implementation.</p>
       </article>
       <article class="card">
         <h3>Accessible Prosthetics Initiative</h3>
         <p><strong>Role:</strong> Electrical/Embedded Systems Member</p>
+        <p><strong>Contact:</strong>Michael Dahl [Michael.Dahl@utdallas.edu] [717-704-9291]</p>
         <p>Developed a 3D-printed, low-cost prosthetic arm powered by an ESP32 microcontroller and controlled using EMG signals. 
           Designed custom actuator mounts and integrated dual buck converters for stable servo operation. 
           Led the integration of uMyo EMG sensors for accurate and responsive user interface, enabling intuitive control of the prosthetic hand movements.
           </p>
         <div class="triptych">
-          <figure><img src="images/API_Arm_Front.png" alt="Arm Front"><figcaption>Front of Proshetic Arm</figcaption></figure>
-          <figure><img src="images/API_Arm_Back.png" alt="Arm Back"><figcaption>Back of Prosthetic Arm</figcaption></figure>
-          <figure><img src="images/API_Arm_Side.jpg" alt="Arm Side"><figcaption>Side of Prosthetic Arm with ESP32 stack and connectors</figcaption></figure>
+          <figure><img src="images/API/API_Arm_Front.png" alt="Arm Front"><figcaption>Front of Proshetic Arm</figcaption></figure>
+          <figure><img src="images/API/API_Arm_Back.png" alt="Arm Back"><figcaption>Back of Prosthetic Arm</figcaption></figure>
+          <figure><img src="images/API/API_Arm_Side.png" alt="Arm Side"><figcaption>Side of Prosthetic Arm with ESP32 stack and connectors</figcaption></figure>
+        </div>
+        <div class="triptych">
+          <figure>
+            <video controls preload="metadata" poster="images/API/API_Hand_Close_Cover.jpg" style="border-radius:12px;border:1px solid var(--line);width:100%;height:270px;object-fit:cover;">
+              <source src="videos/API_Hand_Close.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <figcaption>Demonstrating the Prosthetic Arm running with ESP32 and ArduinoIDE</figcaption>
+          </figure>
+        </div>
+      </article>
+      <article class="card">
+        <h3>Integrated Biomedical, RF Circuits and Systems Lab (iBioRF)</h3>
+        <p><strong>Role:</strong>Research Assistant</p>
+        <p><strong>Contact:</strong>Erik Pineda-Alvarez [Erik.Pineda-Alvarez@utdallas.edu]</p>
+        <p>Developing wireless drone control systems using the USRP B206mini-i software-defined radio (SDR). 
+          Focused on generating and transmitting RF signals for real-time UAV communication and coordination through RadioConda and GNU Radio. 
+          Work emphasizes RF signal processing, link stability testing, and integration with embedded control architectures for large-scale autonomous flight.
+        </p>
+        <div class="triptych">
+          <figure><img src="images/iBioRF_USRPmini.jpeg" alt="USRP B206mini-i"><figcaption>USRP B206mini-i SDR</figcaption></figure>
+          <figure><img src="images/iBioRF_RF_Waves.jpg" alt="Generating 2.4Ghz RF Waves"><figcaption>Generating 2.4Ghz RF signals</figcaption></figure>
+          <figure><img src="images/iBioRF_Block_Diagram.jpg" alt="EPICS 3"><figcaption>Block Diagram to generate RF signals</figcaption></figure>
         </div>
       </article>
       <article class="card">
@@ -220,9 +250,9 @@
           interfaces and a scalable backend to support event scheduling, volunteer management, and resource sharing.
         </p>
         <div class="triptych">
-          <figure><img src="images/EPICS_GANTT.jpeg" alt="EPICS 1"><figcaption>Project GANTT Chart</figcaption></figure>
-          <figure><img src="images/EPICS_Andrea.jpg" alt="EPICS 2"><figcaption>Final Presentation with Professor</figcaption></figure>
-          <figure><img src="images/EPICS_Rae.jpg" alt="EPICS 3"><figcaption>Final Presentation with Friends of MLK sponsor, Rae</figcaption></figure>
+          <figure><img src="images/EPICS/EPICS_GANTT.jpeg" alt="EPICS 1"><figcaption>Project GANTT Chart</figcaption></figure>
+          <figure><img src="images/EPICS/EPICS_Andrea.jpg" alt="EPICS 2"><figcaption>Final Presentation with Professor</figcaption></figure>
+          <figure><img src="images/EPICS/EPICS_Rae.jpg" alt="EPICS 3"><figcaption>Final Presentation with Friends of MLK sponsor, Rae</figcaption></figure>
         </div>
       </article>
       <article class="card">
@@ -234,9 +264,16 @@
             analyze prediction accuracy and misclassification trends.
         </p>
         <div class="triptych">
-          <figure><img src="images/IEEE_Confusion_Matrix.png" alt="IEEE 1"><figcaption>Confusion matrix showing per-class accuracy for the CNN-based dog breed classifier.
+          <figure><img src="images/IEEE/IEEE_Confusion_Matrix.png" alt="IEEE 1"><figcaption>Confusion matrix showing per-class accuracy for the CNN-based dog breed classifier.
           High diagonal concentration indicates strong model precision across most categories.</figcaption></figure>
         </div>
+      </article>
+      <article class="card">
+        <h3>RIDE Lab — Orthotic Design</h3>
+        <p><strong>Role:</strong> Team Lead</p>
+        <p>Conducting foundational research for a next-generation prosthetic arm aimed at improving accessibility and control for users with partial limb loss. 
+          Focused on benchmarking existing prosthetic technologies, analyzing actuator and joint mechanisms, and preparing design proposals for future prototyping phases. 
+          Collaborated in team presentations translating technical findings into actionable design plans for future implementation.</p>
       </article>
     </section>
 
