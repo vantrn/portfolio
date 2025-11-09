@@ -65,10 +65,13 @@
       <h2>Projects</h2>
       <article class="card">
         <h3>EMG-Controlled Prosthetic Arm</h3>
-        <p>Designed and built a custom EMG-controlled prosthetic arm as an independent exploration of biomedical control systems.
-           Mapped optimal electrode placements on the flexor, extensor, and brachioradialis muscles to isolate activation patterns for intuitive motor control. 
-           Integrated an ESP32, servo driver, and actuator assembly to translate muscle activity into precise joint movements. 
-           A 3D-printed arm housing is prepared for final assembly, completing a full stack from signal acquisition to mechanical actuation for a low-cost, functional prosthetic platform.</p>
+        <div style="margin-top: 10px; border-top: 1px solid var(--line); padding-top: 10px;"></div>
+        <ul>
+          <li>Designed and built a custom EMG-controlled prosthetic arm as an independent exploration of biomedical control systems.</li>
+          <li>Mapped optimal electrode placements on the flexor, extensor, and brachioradialis muscles to isolate activation patterns for intuitive motor control. </li>
+          <li>Integrated an ESP32, servo driver, and actuator assembly to translate muscle activity into precise joint movements. </li>
+          <li>A 3D-printed arm housing is prepared for final assembly, completing a full stack from signal acquisition to mechanical actuation for a low-cost, functional prosthetic platform.</li>
+        </ul>
            <p><strong>Skills:</strong> ESP32 firmware, EMG signal acquisition (flexor/extensor/brachioradialis), analog/digital filtering, servo control (I2C PWM driver), embedded C/C++, circuit wiring, CAD prep, 3D-print planning, real-time tuning.</p>
         <div class="triptych">
           <figure><img src="images/EMG_ARM/EMG_ARM_Fist_One.png" alt="One signal from Flexor Carpi"><figcaption>One EMG signal from Flexor Carpi Radialis Muscle</figcaption></figure>
@@ -88,6 +91,7 @@
       </article>
       <article class="card">
         <h3>Probabilistic UAV Trajectory Prediction</h3>
+        <div style="margin-top: 10px; border-top: 1px solid var(--line); padding-top: 10px;"></div>
         <p>
           A 3D aerospace simulation combining
           <strong>classical control theory</strong> with
@@ -124,6 +128,7 @@
       </article>
       <article class="card">
         <h3>ROS2 Multi-Drone Coordination</h3>
+        <div style="margin-top: 10px; border-top: 1px solid var(--line); padding-top: 10px;"></div>
         <p>I built a three-agent, leader–follower swarm that holds single-file formation in Gazebo. 
           First, a kinematic version drives agents via /world/empty/set_pose with a PD controller and soft repulsion to maintain spacing under injected “wind” disturbances. 
           Then I upgrade to a physics-style model: point-mass dynamics with drag and steady/gusty wind forces, where a force-based PD counters drift; terminal logs show spacing error, wind (N), PD counter-force (N), and velocities as proof of correction. 
@@ -146,7 +151,8 @@
       </article>
       <article class="card">
         <h3>Homemade DC Motor (DIY)</h3>
-        <p>
+        <div style="margin-top: 10px; border-top: 1px solid var(--line); padding-top: 10px;"></div>
+        <ul>
           Built a simple DC motor from scratch using a custom wooden contraption to hold a shaft and coil held between two nails. 
           This is powered by an 18V battery from a drill that powers two ends of the brush that when in contact with the contraption generate a magnetic field.
           The motor demonstrates a Lorentz force.
@@ -179,165 +185,165 @@
 
     <section id="experience">
       <h2>Experience</h2>
-
-      <!-- Comet Aerobotics -->
-      <article class="card exp">
+      <article class="card">
         <h3>Comet Aerobotics (AIAA) — NASA Lunabotics</h3>
-        <div class="exp-subhead"></div>
-        <p class="meta"><strong>Role:</strong> Electrical Team Lead</p>
-        <p class="meta"><strong>Contact:</strong> Ian Meyer — <a href="mailto:ianhmeyer@gmail.com">ianhmeyer@gmail.com</a> • (214) 400-7752</p>
+        <div style="margin-top: 10px; border-top: 1px solid var(--line); padding-top: 10px;"></div>
+        <p><strong>Role:</strong> Electrical Team Lead</p>
+        <p><strong>Contact:</strong> Ian Meyer — <a href="mailto:ianhmeyer@gmail.com">ianhmeyer@gmail.com</a> • (214) 400-7752</p>
+
         <ul>
           <li>Redesigning the rover’s electrical architecture to optimize power distribution, system safety, and communication reliability.</li>
           <li>Integrated ESP32 microcontrollers with CAN transceivers to create a modular control network supporting autonomous navigation.</li>
           <li>Designing custom PCBs in Altium for power regulation and relay switching, reducing wiring complexity and improving fault tolerance.</li>
-          <li>Collaborated with mechanical and software teams to ensure subsystem compatibility during the ongoing system power redesign phase.</li>
+          <li>Collaborated with mechanical and software teams to ensure full subsystem compatibility during the ongoing system power redesign phase.</li>
         </ul>
-        <hr class="exp-divider"/>
-        <p class="skills">Skills:</p>
-        <p class="skillline">
-          Altium schematic/PCB <span class="dot"></span> ESP32 + CAN integration
-          <span class="dot"></span> Power regulation (bucks/relays)
-          <span class="dot"></span> Harness design
-          <span class="dot"></span> Fault isolation
-          <span class="dot"></span> Test planning
-          <span class="dot"></span> Cross-team integration
-        </p>
 
-        <div class="triptych">
-          <figure><img src="images/CA_Early_Design.png" alt="Harness"><figcaption>Pre-season early design</figcaption></figure>
-          <figure><img src="images/CA_Model_1.png" alt="Electrical Box"><figcaption>Early model of the electrical box</figcaption></figure>
-          <figure><img src="images/CA_Model_2.png" alt="Rover integration"><figcaption>Model 2 with rover frame</figcaption></figure>
+        <div style="margin-top: 10px; border-top: 1px solid var(--line); padding-top: 10px;">
+          <strong>Skills:</strong><br>
+            Altium schematic/PCB • ESP32 + CAN integration • Power regulation (bucks/relays) • Harness design • Fault isolation • Test planning • Cross-team integration
         </div>
         <div class="triptych">
-          <figure><img src="images/CA_Box_25.png" alt="Current Electrical Box"><figcaption>Current electrical box</figcaption></figure>
-          <figure><img src="images/CA_Early_Schematic.png" alt="Schematic"><figcaption>Early system schematic</figcaption></figure>
-          <figure><img src="images/CA_ESP32_CAN_PCB.png" alt="ESP32 CAN PCB"><figcaption>ESP32 + CAN PCB</figcaption></figure>
+          <figure><img src="images/CA/CA_Early_Design.png" alt="Harness"><figcaption>Pre-Season early design</figcaption></figure>
+          <figure><img src="images/CA/CA_Model_1.png" alt="CAN"><figcaption>Early Model of the Electrical Box</figcaption></figure>
+          <figure><img src="images/CA/CA_Model_2.png" alt="System test"><figcaption>Model 2 of the early Electrical Box with Rover</figcaption></figure>
+        </div>
+        <div class="triptych">
+          <figure><img src="images/CA/CA_Box_25.png" alt="Electrical Box"><figcaption>Current Electrical Box Design</figcaption></figure>
+          <figure><img src="images/CA/CA_Early_Schematic.png" alt="Electrical Schematic"><figcaption>Early Schematic of the Electrical Box</figcaption></figure>
+          <figure><img src="images/CA/CA_ESP32_CAN_PCB.png" alt="ESP32 and CAN PCB"><figcaption>ESP32 and CAN transceiver PCB created to reduce amount of wires and increase connection strength</figcaption></figure>
         </div>
       </article>
-
-      <!-- HBS Lab -->
-      <article class="card exp">
-        <h3>Humanoid Biorobotics Smartsystems (HBS) Lab</h3>
-        <div class="exp-subhead"></div>
-        <p class="meta"><strong>Role:</strong> Research Assistant</p>
+      <article class="card">
+        <h3>Humanoid Biorobotics and Smart Systems Lab (HBS Lab)</h3>
+        <div style="margin-top: 10px; border-top: 1px solid var(--line); padding-top: 10px;"></div>
+        <p><strong>Role:</strong> Research Assistant</p>
+        <p><strong>Contact:</strong> Dr. Yonas Tadesse [Yonas.Tadesse@utdallas.edu] [972-883-4556]</p>
         <ul>
-          <li>Fabricated Twisted &amp; Coiled Polymer (TCP) actuators; built training rigs and MATLAB trackers to quantify contraction versus voltage/temperature.</li>
-          <li>Characterized heating/cooling cycles under variable load and pressure; analyzed response speed and efficiency for soft-robotic use.</li>
-          <li>Demonstrated feasibility in two applications: soft robotic manipulator and expressive robotic face modules.</li>
+          <li>Fabricated Twisted &amp; Coiled Polymer (TCP) actuators and developed MATLAB-based tracking tools to measure deformation and performance.</li>
+          <li>Tested actuator behavior under varying loads and pressures, characterizing efficiency, temperature response, and durability.</li>
+          <li>Applied results to two demonstrations: soft robotic manipulator and expressive robotic face prototype.</li>
         </ul>
-        <hr class="exp-divider"/>
-        <p class="skills">Skills:</p>
-        <p class="skillline">
-          Experimental design <span class="dot"></span> Sensor setup &amp; data capture
-          <span class="dot"></span> MATLAB analysis &amp; tracking
-          <span class="dot"></span> Thermal/pressure characterization
-          <span class="dot"></span> Technical documentation
-        </p>
-
+        <div style="margin-top: 10px; border-top: 1px solid var(--line); padding-top: 10px;">
+          <strong>Skills:</strong><br>
+          Experimental prototyping • TCP actuator fabrication • MATLAB image &amp; motion tracking • Thermal and mechanical analysis 
+          • Data acquisition &amp; calibration • Sensor instrumentation • Robotics actuation research • Cross-disciplinary collaboration
+        </div>
+          <div class="triptych">
+          <figure>
+            <video controls preload="metadata" poster="images/HBS/HBS_TCP_Create.png" style="border-radius:12px;border:1px solid var(--line);width:100%;height:270px;object-fit:cover;">
+              <source src="videos/HBS_TCP_Create.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <figcaption>Spinning the cable while holding it to create coils.</figcaption>
+          </figure>
+          <figure>
+            <video controls preload="metadata" poster="images/HBS/HBS_TCP_Train.png" style="border-radius:12px;border:1px solid var(--line);width:100%;height:270px;object-fit:cover;">
+              <source src="videos/HBS_TCP_Train.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <figcaption>Training the TCP with 9V</figcaption>
+          </figure>
+          <figure><img src="images/HBS/HBS_TCP_Pressure_Test.png" alt="Plot"><figcaption>TCP healing and cooling test under different pressures</figcaption></figure>
+        </div>
         <div class="triptych">
-          <figure><img src="images/HBS_TCP_Create.jpeg" alt="TCP samples"><figcaption>TCP samples</figcaption></figure>
-          <figure><img src="images/HBS_TCP_Train.png" alt="Training rig"><figcaption>Training &amp; measurement rig</figcaption></figure>
-          <figure><img src="images/HBS_TCP_MATLAB.jpg" alt="MATLAB plot"><figcaption>MATLAB tracking &amp; plots</figcaption></figure>
+          <figure><img src="images/HBS/HBS_TCP_Face.png" alt="TCP Silicone Face"><figcaption>Facial Expressions using TCP under silicone skin mask</figcaption></figure>
+          <figure><img src="images/HBS/HBS_TCP_Robot.png" alt="TCP Robot Arm"><figcaption>Robotic Arm developed with TCP muscles</figcaption></figure>
+          <figure><img src="images/HBS/HBS_TCP_Limb.png" alt="TCP Soft Limb"><figcaption>Soft Robotic Limb using TCP and silicone</figcaption></figure>
         </div>
       </article>
-
-      <!-- iBioRF Lab -->
-      <article class="card exp">
-        <h3>Integrated Biomedical Radio Frequency (iBioRF) Lab</h3>
-        <div class="exp-subhead"></div>
-        <p class="meta"><strong>Role:</strong> SDR/Controls Research Member</p>
-        <ul>
-          <li>Building an SDR control link for large UAVs using Ettus USRP B206mini-i; implementing waveform generation and link testing in RadioConda/GNU Radio.</li>
-          <li>Developing RF-to-autopilot bridge for command/telemetry with timing, packet framing, and robust link monitoring.</li>
-          <li>Coordinating lab bring-up, calibration, and test procedures; documenting configs for repeatable field operation.</li>
-        </ul>
-        <hr class="exp-divider"/>
-        <p class="skills">Skills:</p>
-        <p class="skillline">
-          USRP B206mini-i <span class="dot"></span> GNU Radio / RadioConda
-          <span class="dot"></span> SDR waveform design
-          <span class="dot"></span> Link budgets &amp; SNR
-          <span class="dot"></span> Packetization &amp; timing
-          <span class="dot"></span> Controls integration
-        </p>
-      </article>
-
-      <!-- Accessible Prosthetics Initiative -->
-      <article class="card exp">
+      <article class="card">
         <h3>Accessible Prosthetics Initiative</h3>
-        <div class="exp-subhead"></div>
-        <p class="meta"><strong>Role:</strong> Electrical / Embedded Systems</p>
+        <p><strong>Role:</strong> Electrical/Embedded Systems Member</p>
+        <p><strong>Contact:</strong> Michael Dahl [Michael.Dahl@utdallas.edu] [717-704-9291]</p>
         <ul>
-          <li>Integrated uMyo EMG sensors with ESP32 and dual buck converters to drive multi-servo prosthetic hand mechanics.</li>
-          <li>Mapped EMG sites (flexor, extensor, brachioradialis) and tuned filtering/thresholding for low-latency gesture control.</li>
-          <li>Produced 3D-printed housings and wiring harnesses; staged firmware for click/clench gestures.</li>
+          <li>Developed a 3D-printed, low-cost prosthetic arm powered by an ESP32 microcontroller and controlled using EMG signals.</li> 
+          <li>Designed custom actuator mounts and integrated dual buck converters for stable servo operation. </li>
+          <li>Led the integration of uMyo EMG sensors for accurate and responsive user interface, enabling intuitive control of the prosthetic hand movements.</li>
         </ul>
-        <hr class="exp-divider"/>
-        <p class="skills">Skills:</p>
-        <p class="skillline">
-          EMG acquisition <span class="dot"></span> ESP32 firmware
-          <span class="dot"></span> Buck regulation &amp; power
-          <span class="dot"></span> Servo control
-          <span class="dot"></span> 3D printing &amp; mounts
-        </p>
-
-        <div class="triptych">
-          <figure><img src="images/API_Arm_Front.png" alt="Arm front"><figcaption>Front of prosthetic arm</figcaption></figure>
-          <figure><img src="images/API_Arm_Back.png" alt="Arm back"><figcaption>Back of prosthetic arm</figcaption></figure>
-          <figure><img src="images/API_Arm_Side.jpg" alt="Arm side"><figcaption>ESP32 stack &amp; connectors</figcaption></figure>
+        <div style="margin-top: 10px; border-top: 1px solid var(--line); padding-top: 10px;">
+          <strong>Skills:</strong><br>
+          EMG signal acquisition &amp; filtering • Embedded C/C++ (ESP32) • Servo control via I2C (PCA9685) • Power delivery optimization • 3D mechanical integration • PCB prototyping • Electrode calibration • Bio-signal interface design • Prototyping &amp; debugging
         </div>
-      </article>
-
-      <!-- EPICS -->
-      <article class="card exp">
-        <h3>EPICS — Friends of MLK Reading Huddle</h3>
-        <div class="exp-subhead"></div>
-        <p class="meta"><strong>Role:</strong> Backend Developer</p>
-        <ul>
-          <li>Built a community platform to support literacy mentorship; contributed to API design and data models in TypeScript/Prisma.</li>
-          <li>Implemented responsive UI with Vue/Tailwind and containerized services with Docker for consistent dev/CI.</li>
-          <li>Collaborated with the partner to scope features for event scheduling, volunteer management, and resource sharing.</li>
-        </ul>
-        <hr class="exp-divider"/>
-        <p class="skills">Skills:</p>
-        <p class="skillline">
-          Vue <span class="dot"></span> Tailwind <span class="dot"></span> TypeScript
-          <span class="dot"></span> PostgreSQL/Prisma <span class="dot"></span> Docker
-          <span class="dot"></span> REST design <span class="dot"></span> Accessibility
-        </p>
-
         <div class="triptych">
-          <figure><img src="images/EPICS_GANTT.jpeg" alt="GANTT"><figcaption>Project GANTT</figcaption></figure>
-          <figure><img src="images/EPICS_Andrea.jpg" alt="Presentation"><figcaption>Final presentation</figcaption></figure>
-          <figure><img src="images/EPICS_Rae.jpg" alt="Sponsor"><figcaption>With sponsor (Friends of MLK)</figcaption></figure>
+          <figure><img src="images/API/API_Arm_Front.png" alt="Arm Front"><figcaption>Front of Proshetic Arm</figcaption></figure>
+          <figure><img src="images/API/API_Arm_Back.png" alt="Arm Back"><figcaption>Back of Prosthetic Arm</figcaption></figure>
+          <figure><img src="images/API/API_Arm_Side.png" alt="Arm Side"><figcaption>Side of Prosthetic Arm with ESP32 stack and connectors</figcaption></figure>
         </div>
-      </article>
-
-      <!-- IEEE -->
-      <article class="card exp">
-        <h3>IEEE Project — CNN Dog Breed Classifier</h3>
-        <div class="exp-subhead"></div>
-        <p class="meta"><strong>Role:</strong> Member</p>
-        <ul>
-          <li>Built a TensorFlow CNN for multi-class dog-breed classification; curated dataset and ran training/validation experiments.</li>
-          <li>Analyzed confusion matrix to diagnose misclassifications and guide augmentation and hyperparameter tweaks.</li>
-        </ul>
-        <hr class="exp-divider"/>
-        <p class="skills">Skills:</p>
-        <p class="skillline">
-          Python <span class="dot"></span> TensorFlow/Keras
-          <span class="dot"></span> Data prep &amp; augmentation
-          <span class="dot"></span> Model evaluation &amp; reporting
-        </p>
-
         <div class="triptych">
-          <figure><img src="images/IEEE_Confusion_Matrix.png" alt="Confusion matrix">
-            <figcaption>Confusion matrix for the CNN classifier</figcaption>
+          <figure>
+            <video controls preload="metadata" poster="images/API/API_Hand_Close_Cover.jpg" style="border-radius:12px;border:1px solid var(--line);width:100%;height:270px;object-fit:cover;">
+              <source src="videos/API_Hand_Close.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <figcaption>Demonstrating the Prosthetic Arm running with ESP32 and ArduinoIDE</figcaption>
           </figure>
         </div>
       </article>
+      <article class="card">
+        <h3>Integrated Biomedical, RF Circuits and Systems Lab (iBioRF)</h3>
+        <p><strong>Role:</strong> Research Assistant</p>
+        <p><strong>Contact:</strong> Erik Pineda-Alvarez [Erik.Pineda-Alvarez@utdallas.edu]</p>
+        <ul>
+          <li>Developing a wireless UAV control system using Ettus USRP B206mini-i to transmit custom RF signals for large drone operation.</li>
+          <li>Implementing SDR-based waveform generation and link analysis through RadioConda and GNU Radio environments.</li>
+          <li>Integrating RF control with onboard autopilot to support closed-loop command, telemetry, and tracking.</li>
+        </ul>
+        <div style="margin-top: 10px; border-top: 1px solid var(--line); padding-top: 10px;">
+          <strong>Skills:</strong><br>
+          Software-defined radio (SDR) • USRP B206mini-i configuration • RF link design &amp; analysis • GNU Radio &amp; RadioConda environment development 
+          • Signal modulation (QAM, BPSK) • Wireless telemetry integration • Control systems design • UAV communication systems
+        </div>
+        <div class="triptych">
+          <figure><img src="images/iBioRF/iBioRF_SDR.jpg" alt="USRP B206mini-i"><figcaption>USRP B206mini-i SDR</figcaption></figure>
+          <figure><img src="images/iBioRF/iBioRF_2_4GHz.png" alt="Generating 2.4Ghz RF Waves"><figcaption>Generating 2.4Ghz RF signals</figcaption></figure>
+          <figure><img src="images/iBioRF/iBioRF_Block_Diagram.png" alt="RF Block Diagrams"><figcaption>Block Diagram to generate RF signals</figcaption></figure>
+        </div>
+      </article>
+      <article class="card">
+        <h3>EPICS Project</h3>
+        <p><strong>Role:</strong> Backend Developer</p>
+        <ul>
+          <li>Collaborated with a community partner to design and deploy a literacy support platform for mentorship and event coordination.</li>
+          <li>Developed backend services using Node.js, PostgreSQL, and Prisma; implemented responsive frontend with Vue and Tailwind.</li>
+          <li>Containerized project with Docker for stable deployment and team collaboration.</li>
+        </ul>
+        <div style="margin-top: 10px; border-top: 1px solid var(--line); padding-top: 10px;">
+          <strong>Skills:</strong><br>
+          Full-stack web development • Node.js &amp; Express backend • REST API architecture • PostgreSQL/Prisma ORM 
+          • Vue 3 + Tailwind UI design • TypeScript • Docker containerization • Agile collaboration &amp; Git version control
+        </div>
+        <div class="triptych">
+          <figure><img src="images/EPICS/EPICS_GANTT.jpeg" alt="EPICS 1"><figcaption>Project GANTT Chart</figcaption></figure>
+          <figure><img src="images/EPICS/EPICS_Andrea.jpg" alt="EPICS 2"><figcaption>Final Presentation with Professor</figcaption></figure>
+          <figure><img src="images/EPICS/EPICS_Rae.jpg" alt="EPICS 3"><figcaption>Final Presentation with Friends of MLK sponsor, Rae</figcaption></figure>
+        </div>
+      </article>
+      <article class="card">
+        <h3>IEEE Project</h3>
+        <p><strong>Role:</strong> Machine Learning Team Member </p>
+        <ul>
+          <li>Trained a convolutional neural network for dog breed classification using TensorFlow and custom-labeled datasets.</li>
+          <li>Performed model validation using confusion matrices to analyze accuracy and misclassification trends.</li>
+          <li>Presented final results with visual metrics to evaluate model performance.</li>
+        </ul>
+        <div style="margin-top: 10px; border-top: 1px solid var(--line); padding-top: 10px;">
+          <strong>Skills:</strong><br>
+          Python programming • TensorFlow/Keras deep learning • CNN model design &amp; optimization • Data preprocessing &amp; augmentation • Model validation (confusion matrix, accuracy metrics) • GPU training workflow • Scientific presentation
+        </div>
+        <div class="triptych">
+          <figure><img src="images/IEEE/IEEE_Confusion_Matrix.png" alt="IEEE 1"><figcaption>Confusion matrix showing per-class accuracy for the CNN-based dog breed classifier.
+          High diagonal concentration indicates strong model precision across most categories.</figcaption></figure>
+        </div>
+      </article>
+      <article class="card">
+        <h3>RIDE Lab — Orthotic Design</h3>
+        <p><strong>Role:</strong> Team Lead</p>
+        <p>Conducting foundational research for a next-generation prosthetic arm aimed at improving accessibility and control for users with partial limb loss. 
+          Focused on benchmarking existing prosthetic technologies, analyzing actuator and joint mechanisms, and preparing design proposals for future prototyping phases. 
+          Collaborated in team presentations translating technical findings into actionable design plans for future implementation.</p>
+          <p><strong>Skills:</strong> prosthetic mechanism research, actuator/joint trade-studies, requirements drafting, concept specs, design reviews, technical presentations.</p>
+      </article>
     </section>
-
 
     <section id="contact">
       <h2>Contact</h2>
