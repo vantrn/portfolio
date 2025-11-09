@@ -1,123 +1,387 @@
-/* Light theme variables */
+/* ===============================
+   THEME: Light (default) + Dark
+   =============================== */
+
+/* Light theme variables (default) */
 :root {
   --bg: #f7f9fb;
   --panel: #ffffff;
   --elev: #f1f3f6;
-  --fg: #111;
-  --muted: #555;
-  --line: #d1d9e0;
-  --accent: #0077ff;
+  --fg: #0f1220;
+  --muted: #586174;
+  --line: #d6dee6;
+  --accent: #0a67ff;
+
+  --shadow-sm: 0 4px 16px rgba(0,0,0,0.06);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.10);
+
+  --radius-lg: 18px;
+  --radius-md: 12px;
+
+  --container-w: 1100px;
+
+  /* rhythm */
+  --space-1: 6px;
+  --space-2: 10px;
+  --space-3: 14px;
+  --space-4: 18px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 40px;
 }
 
-/* Dark theme override */
+/* Dark theme overrides */
 [data-theme="dark"] {
-  --bg:#0e1216;
-  --panel:#141a20;
-  --elev:#182129;
-  --fg:#e8edf2;
-  --muted:#a4b0ba;
-  --line:#24303a;
-  --accent:#8bd3ff;
+  --bg: #0e1216;
+  --panel: #141a20;
+  --elev: #182129;
+  --fg: #e8edf2;
+  --muted: #a4b0ba;
+  --line: #24303a;
+  --accent: #8bd3ff;
+
+  --shadow-sm: 0 4px 16px rgba(0,0,0,0.35);
+  --shadow-md: 0 10px 28px rgba(0,0,0,0.45);
 }
 
-/* Theme toggle button */
+/* Optional: respect user system preference on first load */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1216;
+    --panel: #141a20;
+    --elev: #182129;
+    --fg: #e8edf2;
+    --muted: #a4b0ba;
+    --line: #24303a;
+    --accent: #8bd3ff;
+
+    --shadow-sm: 0 4px 16px rgba(0,0,0,0.35);
+    --shadow-md: 0 10px 28px rgba(0,0,0,0.45);
+  }
+}
+
+/* ===============================
+   GLOBAL / BASE
+   =============================== */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--fg);
+  background: var(--bg);
+  line-height: 1.35;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background .35s ease, color .35s ease;
+  padding-top: 72px; /* header offset */
+}
+
+/* Subtle dark background flourish only in dark mode */
+[data-theme="dark"] body {
+  background: linear-gradient(120deg, #0f1318 0%, #0e1216 40%, #101820 100%);
+}
+
+.container {
+  max-width: var(--container-w);
+  margin: 0 auto;
+  padding: var(--space-5);
+}
+
+/* ===============================
+   HEADER / NAV
+   =============================== */
+
+header {
+  position: fixed;
+  inset: 0 0 auto 0; /* top:0; left:0; right:0 */
+  height: 72px;
+  backdrop-filter: blur(10px);
+  background: color-mix(in oklab, var(--panel) 70%, transparent);
+  border-bottom: 1px solid var(--line);
+  z-index: 50;
+  display: flex;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.links {
+  display: flex;
+  gap: 24px;
+}
+
+.links a {
+  color: var(--muted);
+  padding: 10px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background .2s ease, color .2s ease, transform .15s ease;
+}
+
+.links a:hover,
+.links a.active {
+  color: var(--fg);
+  background: color-mix(in oklab, var(--elev) 65%, transparent);
+}
+
+/* Theme toggle button (placed in header) */
 #theme-toggle {
   background: none;
-  border: none;
+  border: 1px solid var(--line);
   cursor: pointer;
-  font-size: 20px;
+  font-size: 14px;
+  line-height: 1;
+  padding: 10px 12px;
   margin-left: 12px;
   color: var(--muted);
-  transition: transform 0.2s ease;
+  border-radius: 10px;
+  transition: transform .15s ease, color .2s ease, background .2s ease, border-color .2s ease;
 }
 
 #theme-toggle:hover {
   color: var(--fg);
-  transform: scale(1.2);
+  background: color-mix(in oklab, var(--elev) 70%, transparent);
+  border-color: var(--accent);
+  transform: translateY(-1px);
 }
 
-*{box-sizing:border-box;margin:0;padding:0}
-body{
-  font-family:Inter,system-ui,sans-serif;
-  color:var(--fg);
-  background:linear-gradient(120deg,#0f1318 0%,#0e1216 40%,#101820 100%);
-  padding-top:72px
-}
-.container{max-width:1100px;margin:0 auto;padding:24px}
+/* ===============================
+   TYPOGRAPHY / SECTIONS
+   =============================== */
 
-header{
-  position:fixed;top:0;left:0;width:100%;
-  backdrop-filter:blur(10px);
-  background:rgba(14,18,22,.65);
-  border-bottom:1px solid var(--line);
-  z-index:50
-}
-nav{display:flex;justify-content:space-between;align-items:center}
-.links{display:flex;gap:24px}
-.links a{color:var(--muted);padding:10px 14px;border-radius:10px;text-decoration:none}
-.links a:hover,.links a.active{color:var(--fg);background:rgba(255,255,255,0.06)}
-
-section{padding:40px 0; scroll-margin-top:96px}
-h1{font-size:40px;margin-bottom:10px}
-h2{font-size:24px;margin-bottom:18px}
-
-.card{
-  background:var(--elev);
-  border:1px solid var(--line);
-  border-radius:18px;
-  padding:18px;
-  margin-bottom:20px
+section {
+  padding: var(--space-7) 0;
+  scroll-margin-top: 96px;
 }
 
-/* Image grids */
-.triptych{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
-.duo {display: grid;grid-template-columns: repeat(2, 1fr);gap: 12px;margin-top: 12px;margin-left: 8%;margin-right: 8%;}
-figure img{width:100%;height:270px;object-fit:cover;border-radius:12px;border:1px solid var(--line)}
-figure figcaption{text-align:center;color:var(--muted);font-size:12px;margin-top:6px}
-
-footer{border-top:1px solid var(--line);color:var(--muted);text-align:center;padding:28px 0;margin-top:40px}
-
-/* ===== Enhancements for Summary & Education ===== */
-.pill-list{
-  list-style:none;padding:0;margin:.75rem 0 0;
-  display:flex;flex-wrap:wrap;gap:.5rem
-}
-.pill-list li{
-  border:1px solid var(--line);
-  border-radius:999px;
-  padding:.35rem .75rem;
-  font-size:.9rem;
-  color:var(--fg);
-  background:rgba(255,255,255,0.02)
+h1 {
+  font-size: 40px;
+  letter-spacing: -0.015em;
+  margin-bottom: var(--space-2);
 }
 
-.edu-item{ /* keep card look, add small inner layout polish */
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+h2 {
+  font-size: 24px;
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-3);
 }
-.edu-title{ margin:0 0 .25rem 0; }
-.edu-meta{
-  display:flex;flex-wrap:wrap;gap:.75rem;
-  color:var(--muted);font-size:.95rem;margin-bottom:.5rem
+
+h3 {
+  font-size: 18px;
+  letter-spacing: -0.01em;
 }
-.edu-highlights{ margin:.25rem 0 .5rem; max-width:70ch; }
-.edu-list{ margin:.25rem 0 0 1.1rem; padding:0; }
-.edu-list li{ margin:.3rem 0; line-height:1.5; }
+
+/* ===============================
+   CARDS
+   =============================== */
+
+.card {
+  background: var(--elev);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  margin-bottom: var(--space-5);
+  box-shadow: var(--shadow-sm);
+  transition: border-color .2s ease, box-shadow .2s ease, transform .12s ease;
+}
+
+.card:hover {
+  border-color: color-mix(in oklab, var(--accent) 30%, var(--line));
+  box-shadow: var(--shadow-md);
+}
+
+/* Paragraph spacing inside cards */
+.card p {
+  margin-bottom: var(--space-2);
+  color: var(--fg);
+}
+
+/* Divider line utility inside cards */
+.card hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: var(--space-4) 0;
+}
+
+/* ===============================
+   LISTS / BULLETS (Experience/Projects)
+   =============================== */
+
+.card ul {
+  margin: var(--space-2) 0 var(--space-2) 24px; /* indented bullets */
+  padding-left: 8px;
+  line-height: 1.6;
+}
+
+.card li {
+  margin-bottom: 6px;
+}
+
+/* Skills block within cards (the line after bullets) */
+.card .skills,
+.card .skills-block {
+  margin-top: 12px;
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+/* Inline skill “chips” (if used) */
+.skillset {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.skillset .chip {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  color: var(--fg);
+  background: rgba(255,255,255,.05);
+  border: 1px solid var(--line);
+}
+.skillset .chip strong { font-weight: 600; opacity: .95; }
+
+/* Optional “pill list” style */
+.pill-list {
+  list-style: none;
+  padding: 0;
+  margin: .75rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+.pill-list li {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: .35rem .75rem;
+  font-size: .9rem;
+  color: var(--fg);
+  background: color-mix(in oklab, var(--panel) 90%, transparent);
+}
+
+/* ===============================
+   ABOUT LAYOUT
+   =============================== */
+
+.about-wrap {
+  display: grid;
+  grid-template-columns: 1.5fr 0.7fr; /* wider text column */
+  gap: 48px;
+  align-items: center;
+}
+
+/* Profile photo wrapper */
+.pfp {
+  width: 100%;
+  max-width: 340px;
+  border-radius: 20px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px; /* slightly lower for balance */
+  box-shadow: var(--shadow-sm);
+}
+
+.pfp img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* ===============================
+   GRIDS / IMAGES
+   =============================== */
+
+.triptych {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.duo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 12px;
+  margin-left: 8%;
+  margin-right: 8%;
+}
+
+figure img {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+}
+
+figure figcaption {
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+/* ===============================
+   VIDEO WRAPPER
+   =============================== */
 
 .video-wrap {
   border: 1px solid var(--line);
   background: var(--panel);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  box-shadow: var(--shadow-md);
   max-width: 960px;
   margin: 0 auto;
 }
+
 .video-wrap video {
   display: block;
   width: 100%;
   height: auto;
   background: #000;
 }
+
+/* ===============================
+   EDUCATION BLOCK POLISH
+   =============================== */
+
+.edu-item { box-shadow: var(--shadow-sm); }
+.edu-title { margin: 0 0 .25rem 0; }
+.edu-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  color: var(--muted);
+  font-size: .95rem;
+  margin-bottom: .5rem;
+}
+.edu-highlights { margin: .25rem 0 .5rem; max-width: 70ch; }
+.edu-list { margin: .25rem 0 0 1.1rem; padding: 0; }
+.edu-list li { margin: .3rem 0; line-height: 1.5; }
+
+/* ===============================
+   SKILLS “BUBBLES” (if used under summary)
+   =============================== */
 
 .skills-bubbles {
   display: flex;
@@ -142,87 +406,62 @@ footer{border-top:1px solid var(--line);color:var(--muted);text-align:center;pad
   border-color: var(--accent);
 }
 
-.skillset {
-  display:flex; flex-wrap:wrap; gap:8px; margin-top:12px
-}
-.skillset .chip{
-  display:inline-block; padding:6px 10px; border-radius:999px;
-  font-size:12px; color:var(--fg); background:rgba(255,255,255,.05);
-  border:1px solid var(--line)
-}
-.skillset .chip strong{font-weight:600; opacity:.95}
+/* ===============================
+   FOOTER
+   =============================== */
 
-/* About layout */
-.about-wrap {
-  display: grid;
-  grid-template-columns: 1.5fr 0.7fr; /* wider text column, slightly narrower image */
-  gap: 48px;
-  align-items: center;
+footer {
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  text-align: center;
+  padding: 28px 0;
+  margin-top: 40px;
 }
 
-/* Profile photo */
-.pfp {
-  width: 100%;
-  max-width: 340px;
-  height: auto;
-  border-radius: 20px;
-  background: var(--panel);
-  border: 1px solid var(--line);
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px; /* positions image slightly lower for balance */
-}
+/* ===============================
+   RESPONSIVE
+   =============================== */
 
-.pfp img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 20px;
-}
-
-/* Responsive fix for mobile view */
 @media (max-width: 900px) {
   .about-wrap {
     grid-template-columns: 1fr;
     text-align: center;
+    gap: 24px;
   }
   .pfp {
     margin: 0 auto;
     max-width: 260px;
   }
+  .triptych { grid-template-columns: 1fr; }
+  .duo { grid-template-columns: 1fr; margin-left: 0; margin-right: 0; }
 }
 
-/* Experience section readability improvements */
-.card ul {
-  margin-left: 24px;          /* pushes the bullets inward */
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding-left: 8px;
-  line-height: 1.6;           /* adds space between bullet lines */
-}
+/* ===============================
+   PRINT (force light)
+   =============================== */
 
-.card li {
-  margin-bottom: 6px;         /* spacing between bullets */
-}
-
-.card p {
-  margin-bottom: 6px;        /* extra breathing room between text blocks */
-}
-
-.card strong {
-  color: var(--fg);
-}
-
-.card hr {
-  border: none;
-  border-top: 1px solid var(--line);
-  margin: 16px 0;
-}
-
-.card .skills {
-  margin-top: 12px;
-  font-weight: 500;
-  line-height: 1.5;
+@media print {
+  :root {
+    --bg: #ffffff;
+    --panel: #ffffff;
+    --elev: #ffffff;
+    --fg: #000000;
+    --muted: #333333;
+    --line: #cccccc;
+    --accent: #000000;
+  }
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  header {
+    position: static;
+    height: auto;
+    backdrop-filter: none;
+    background: #ffffff;
+    border-bottom: 1px solid var(--line);
+  }
+  .links a,
+  #theme-toggle { display: none !important; }
+  .card { box-shadow: none !important; border-color: #ddd; }
 }
