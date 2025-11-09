@@ -294,3 +294,60 @@ footer {
   h1 { font-size: 34px; }
   h2 { font-size: 22px; }
 }
+
+/* ===== Header alignment fix: brand left, menu right, nice gap ===== */
+header .container { padding-left: 24px; padding-right: 24px; }
+
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;   /* spread brand and menu to ends */
+  width: 100%;
+}
+
+/* Brand pinned hard-left (no auto margins here) */
+.logo{
+  margin: 0;
+  padding-right: 28px;              /* visual gap before the menu */
+  white-space: nowrap;
+}
+
+/* Menu group lives on the right and stays tight together */
+.links{
+  display: flex;
+  align-items: center;
+  gap: 22px;                        /* spacing between menu items */
+  flex: 1;                          /* take remaining row width */
+  justify-content: flex-end;        /* push items to the far right */
+  margin: 0;
+}
+
+/* Nav links: subdued by default, clear on hover/active */
+.links a{
+  color: var(--muted);
+  padding: 10px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background .2s ease, color .2s ease;
+}
+.links a:hover,
+.links a.active{
+  color: var(--fg);
+  background: color-mix(in oklab, var(--elev) 65%, transparent);
+}
+
+/* Make content links stand out more in dark mode specifically */
+[data-theme="dark"] a:not(.logo):not(.links a){
+  color: #9ed6ff;
+}
+[data-theme="dark"] a:not(.logo):not(.links a):hover{
+  color: #c9ecff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Slightly tighter header on small screens */
+@media (max-width: 640px){
+  .links{ gap: 14px; }
+  .logo{ padding-right: 16px; }
+}
