@@ -128,3 +128,13 @@ footer{border-top:1px solid var(--line);color:var(--muted);text-align:center;pad
   color: #0e1216;
   border-color: var(--accent);
 }
+
+.skillset {
+  display:flex; flex-wrap:wrap; gap:8px; margin-top:12px
+}
+.skillset .chip{
+  display:inline-block; padding:6px 10px; border-radius:999px;
+  font-size:12px; color:var(--fg); background:rgba(255,255,255,.05);
+  border:1px solid var(--line)
+}
+.skillset .chip strong{font-weight:600; opacity:.95}

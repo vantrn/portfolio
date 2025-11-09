@@ -51,16 +51,11 @@
             <p><strong>Key Coursework:</strong> Embedded Systems, Control Systems, Computer Architecture, Digital Logic, Data Structures & Algorithms.<br>
             <strong>Notable Experience:</strong> Electrical Lead – AIAA Comet Aerobotics (Lunabotics Challenge); Research – HBS Lab & RIDE Lab.</p>
           </div>
-
-          <div class="card">
-            <h2>Skills</h2>
-            <p>Embedded Systems • Control & Estimation • ROS2 • PCB Design (Altium) • Python/C/C++ • MATLAB/Simulink • Oscilloscope & Logic Debugging</p>
-          </div>
         </div>
 
         <div>
           <div class="pfp" aria-label="avatar" title="Your photo">
-            <img src="Portfolio.png" alt="Van Tran" onerror="this.outerHTML='👋'" />
+            <img src="images/Portfolio.png" alt="Van Tran" onerror="this.outerHTML='👋'" />
           </div>
         </div>
       </div>
@@ -74,6 +69,7 @@
            Mapped optimal electrode placements on the flexor, extensor, and brachioradialis muscles to isolate activation patterns for intuitive motor control. 
            Integrated an ESP32, servo driver, and actuator assembly to translate muscle activity into precise joint movements. 
            A 3D-printed arm housing is prepared for final assembly, completing a full stack from signal acquisition to mechanical actuation for a low-cost, functional prosthetic platform.</p>
+           <p><strong>Skills:</strong> ESP32 firmware, EMG signal acquisition (flexor/extensor/brachioradialis), analog/digital filtering, servo control (I2C PWM driver), embedded C/C++, circuit wiring, CAD prep, 3D-print planning, real-time tuning.</p>
         <div class="triptych">
           <figure><img src="images/EMG_ARM/EMG_ARM_Fist_One.png" alt="One signal from Flexor Carpi"><figcaption>One EMG signal from Flexor Carpi Radialis Muscle</figcaption></figure>
           <figure><img src="images/EMG_ARM/EMG_ARM_Extension_One.png" alt="One signal from Extensor Carpi"><figcaption>One EMG signal from Extensor Carpi Radialis muscle</figcaption></figure>
@@ -109,6 +105,7 @@
         <p>
           Real-time <strong>3D</strong> and <strong>2D visualizations</strong> show how diffusion improves estimation accuracy and stability.
         </p>
+        <p><strong>Skills:</strong> Python, PyTorch, diffusion denoising, EKF/CTRV/CV models, state estimation, guidance (PD/PN), simulation (3D kinematics), trajectory metrics (ADE/FDE), plotting/debugging.</p>
         <div class="triptych">
           <figure><img src="images/UAV_Diffusion/UAV_Diff_T1.png" alt="Tracker Graph 1"><figcaption>3D (angle A): UAV (green) flying a quarter-circle arc while tracking a ground target (blue). Diffusion-EKF estimate (orange) stays aligned.</figcaption></figure>
           <figure><img src="images/UAV_Diffusion/UAV_Diff_T2.png" alt="Tracker Graph 2"><figcaption>3D (angle B): Alternate angle highlighting stability through the turn.</figcaption></figure>
@@ -131,6 +128,7 @@
           First, a kinematic version drives agents via /world/empty/set_pose with a PD controller and soft repulsion to maintain spacing under injected “wind” disturbances. 
           Then I upgrade to a physics-style model: point-mass dynamics with drag and steady/gusty wind forces, where a force-based PD counters drift; terminal logs show spacing error, wind (N), PD counter-force (N), and velocities as proof of correction. 
           Runs on Ubuntu in Parallels (Apple M2).</p>
+          <p><strong>Skills:</strong> ROS2 (rclpy), DDS topics/services, waypoint/formation control, collision avoidance, path planning, Gazebo, real-time messaging, multi-agent testing.</p>
         <div class="triptych">
           <figure><img src="images/Multi_Drone_Sim/MDS_Kinematic.png" alt="Kinematic Simulation"><figcaption>Multi-Drone Simulation with simple bias and noise</figcaption></figure>
           <figure><img src="images/Multi_Drone_Sim/MDS_Physics.png" alt="Physics Simulation"><figcaption>Multi-Drone Simulation with Physical Wind simulation</figcaption></figure>
@@ -141,6 +139,7 @@
         <p>I built a control system for the DJI Tello EDU that tracks a user’s face, maintains a target distance, and actively compensates for side-winds using optical flow. 
           The drone uses the onboard camera feed to detect and center the user’s face (controlling yaw and forward/back motion) while a separate optical-flow tracker monitors image drift from lateral winds and issues corrective roll commands. 
           A modular architecture separates perception (face + flow), control (PID loops), and the drone interface, enabling a robust real-time system that holds a stable hover and follows the user under air disruption..</p>
+        <p><strong>Skills:</strong> Python, OpenCV face detection, PID control tuning, real-time camera feedback, wireless drone communication (SDK), signal smoothing, turbulence compensation, frame-rate optimization, system debugging.</p>
         <div class="triptych">
           <figure><img src="images/TELLO/TELLO_Face_Track.png" alt="TELLO Drone Face Tracking"><figcaption>TELLO EDU using Python Program to track face and adjust based on position</figcaption></figure>
         </div>
@@ -152,6 +151,7 @@
           This is powered by an 18V battery from a drill that powers two ends of the brush that when in contact with the contraption generate a magnetic field.
           The motor demonstrates a Lorentz force.
         </p>
+        <p><strong>Skills:</strong> Electromechanical design, copper coil winding (150 turns), magnetic field optimization, circuit prototyping, soldering, applied electromagnetism, mechanical balancing, hands-on fabrication, power testing (18 V DC supply).</p>
         <ul>
           <li><strong>Coil:</strong> 150-turn hand-wound copper wire on a custom wooden form.</li>
           <li><strong>Magnet setup:</strong> Two permanent magnets creating a concentrated field across the rotor gap.</li>
@@ -187,6 +187,7 @@
           Integrated ESP32 microcontrollers with CAN transceivers to create a modular control network supporting autonomous navigation. 
           Designing custom PCBs in Altium for power regulation and relay switching, reducing wiring complexity and improving fault tolerance. 
           Collaborated with mechanical and software teams to ensure full subsystem compatibility during the ongoing system power redesign phase.</p>
+          <p><strong>Skills:</strong> Altium schematic/PCB, ESP32 + CAN integration, power regulation (bucks/relays), harness design, fault isolation, test planning, cross-team integration.</p>
         <div class="triptych">
           <figure><img src="images/CA/CA_Early_Design.png" alt="Harness"><figcaption>Pre-Season early design</figcaption></figure>
           <figure><img src="images/CA/CA_Model_1.png" alt="CAN"><figcaption>Early Model of the Electrical Box</figcaption></figure>
@@ -205,7 +206,8 @@
         <p>Conducted experimental research on Twisted and Coiled Polymer (TCP) actuators for use in soft robotics and expressive systems. 
           Fabricated TCP samples, performed thermal and pressure-based characterization, and analyzed contraction behavior through MATLAB-based tracking. 
           Designed and tested setups to measure heating/cooling cycles under variable loads, validating actuator performance for two real-world applications: a soft robotic manipulator and an anthropomorphic robotic face capable of producing facial expressions.</p>
-        <div class="triptych">
+        <p><strong>Skills:</strong> TCP actuator fabrication/training, thermal/pressure characterization, MATLAB tracking/analysis, LabVIEW instrumentation, experiment design, data processing.</p>
+          <div class="triptych">
           <figure>
             <video controls preload="metadata" poster="images/HBS/HBS_TCP_Create.png" style="border-radius:12px;border:1px solid var(--line);width:100%;height:270px;object-fit:cover;">
               <source src="videos/HBS_TCP_Create.mp4" type="video/mp4">
@@ -235,7 +237,8 @@
         <p>Developed a 3D-printed, low-cost prosthetic arm powered by an ESP32 microcontroller and controlled using EMG signals. 
           Designed custom actuator mounts and integrated dual buck converters for stable servo operation. 
           Led the integration of uMyo EMG sensors for accurate and responsive user interface, enabling intuitive control of the prosthetic hand movements.
-          </p>
+        </p>
+        <p><strong>Skills:</strong> ESP32 control, uMyo EMG integration, dual buck converters, servo actuation, embedded bring-up, wiring/assembly, signal-to-motion mapping.</p>
         <div class="triptych">
           <figure><img src="images/API/API_Arm_Front.png" alt="Arm Front"><figcaption>Front of Proshetic Arm</figcaption></figure>
           <figure><img src="images/API/API_Arm_Back.png" alt="Arm Back"><figcaption>Back of Prosthetic Arm</figcaption></figure>
@@ -259,6 +262,7 @@
           Focused on generating and transmitting RF signals for real-time UAV communication and coordination through RadioConda and GNU Radio. 
           Work emphasizes RF signal processing, link stability testing, and integration with embedded control architectures for large-scale autonomous flight.
         </p>
+        <p><strong>Skills:</strong> SDR (USRP B206mini-i), GNU Radio/Radioconda, RF waveform generation, link testing, UAV control over RF, spectral analysis, latency/range evaluation.</p>
         <div class="triptych">
           <figure><img src="images/iBioRF/iBioRF_SDR.jpg" alt="USRP B206mini-i"><figcaption>USRP B206mini-i SDR</figcaption></figure>
           <figure><img src="images/iBioRF/iBioRF_2_4GHz.png" alt="Generating 2.4Ghz RF Waves"><figcaption>Generating 2.4Ghz RF signals</figcaption></figure>
@@ -273,6 +277,7 @@
           Tailwind CSS, TypeScript, Docker, and PostgreSQL with Prisma ORM. Focused on building accessible, responsive
           interfaces and a scalable backend to support event scheduling, volunteer management, and resource sharing.
         </p>
+        <p><strong>Skills:</strong> Vue.js, Tailwind, TypeScript, Node.js, Docker, PostgreSQL + Prisma, auth/routes, responsive UI, stakeholder demos.</p>
         <div class="triptych">
           <figure><img src="images/EPICS/EPICS_GANTT.jpeg" alt="EPICS 1"><figcaption>Project GANTT Chart</figcaption></figure>
           <figure><img src="images/EPICS/EPICS_Andrea.jpg" alt="EPICS 2"><figcaption>Final Presentation with Professor</figcaption></figure>
@@ -287,6 +292,7 @@
             achieving strong class separation across 10+ breeds. Evaluated performance through a confusion matrix to
             analyze prediction accuracy and misclassification trends.
         </p>
+        <p><strong>Skills:</strong> Python, TensorFlow/Keras, data preprocessing/augmentation, CNN training, confusion-matrix evaluation, experiment logging.</p>
         <div class="triptych">
           <figure><img src="images/IEEE/IEEE_Confusion_Matrix.png" alt="IEEE 1"><figcaption>Confusion matrix showing per-class accuracy for the CNN-based dog breed classifier.
           High diagonal concentration indicates strong model precision across most categories.</figcaption></figure>
@@ -298,6 +304,7 @@
         <p>Conducting foundational research for a next-generation prosthetic arm aimed at improving accessibility and control for users with partial limb loss. 
           Focused on benchmarking existing prosthetic technologies, analyzing actuator and joint mechanisms, and preparing design proposals for future prototyping phases. 
           Collaborated in team presentations translating technical findings into actionable design plans for future implementation.</p>
+          <p><strong>Skills:</strong> prosthetic mechanism research, actuator/joint trade-studies, requirements drafting, concept specs, design reviews, technical presentations.</p>
       </article>
     </section>
 
