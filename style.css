@@ -164,8 +164,8 @@ nav {
   padding-left: 4px;
   line-height: 1.6;
 }
-.card li { margin-bottom: 8px; }
-.card p  { margin-bottom: 8px; }
+.card li { margin-bottom: 6px; }
+.card p  { margin-bottom: 6px; }
 .card strong { color: var(--fg); }
 
 /* “Skills:” line in cards */
