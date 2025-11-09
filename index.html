@@ -21,9 +21,10 @@
           <a href="#experience">Experience</a>
           <a href="#contact">Contact</a>
         </div>
+        <button id="theme-toggle" aria-label="Toggle Dark/Light Mode">🌙</button>
       </nav>
     </div>
-  </header>
+</header>
 
   <main class="container">
     <section id="about">
@@ -151,6 +152,7 @@
       </article>
       <article class="card">
         <h3>Wind-Resistant Face-Follow Drone (Tello EDU)</h3>
+        <div style="margin-top: 10px; border-top: 1px solid var(--line); padding-top: 10px;"></div>
         <ul>
           <li>Developed a real-time face tracking control algorithm for the DJI Tello EDU drone using Python and OpenCV for visual detection and servo coordination.</li>
           <li>Implemented proportional–integral (PI) control to maintain position and altitude stability during simulated wind disturbances in an indoor environment.</li>
@@ -234,7 +236,7 @@
         <h3>Humanoid Biorobotics and Smart Systems Lab (HBS Lab)</h3>
         <div style="margin-top: 10px; border-top: 1px solid var(--line); padding-top: 10px;"></div>
         <p><strong>Role:</strong> Research Assistant</p>
-        <p><strong>Contact:</strong> Dr. Yonas Tadesse [Yonas.Tadesse@utdallas.edu] [972-883-4556]</p>
+        <p><strong>Contact:</strong> Dr. Yonas Tadesse — <a href="mailto:Yonas.Tadesse@utdallas.edu">Yonas.Tadesse@utdallas.edu</a> • (972) 883-45562</p>
         <ul>
           <li>Fabricated Twisted &amp; Coiled Polymer (TCP) actuators and developed MATLAB-based tracking tools to measure deformation and performance.</li>
           <li>Tested actuator behavior under varying loads and pressures, characterizing efficiency, temperature response, and durability.</li>
@@ -271,8 +273,7 @@
       <article class="card">
         <h3>Accessible Prosthetics Initiative</h3>
         <p><strong>Role:</strong> Electrical/Embedded Systems Member</p>
-        <p><strong>Contact:</strong> Michael Dahl [Michael.Dahl@utdallas.edu] [717-704-9291]</p>
-        <ul>
+        <p><strong>Contact:</strong> Michael Dahl — <a href="mailto:Michael.Dahl@utdallas.edu">Michael.Dahl@utdallas.edu</a> • (717) 704-9291</p>
           <li>Developed a 3D-printed, low-cost prosthetic arm powered by an ESP32 microcontroller and controlled using EMG signals.</li> 
           <li>Designed custom actuator mounts and integrated dual buck converters for stable servo operation. </li>
           <li>Led the integration of uMyo EMG sensors for accurate and responsive user interface, enabling intuitive control of the prosthetic hand movements.</li>
@@ -299,7 +300,7 @@
       <article class="card">
         <h3>Integrated Biomedical, RF Circuits and Systems Lab (iBioRF)</h3>
         <p><strong>Role:</strong> Research Assistant</p>
-        <p><strong>Contact:</strong> Erik Pineda-Alvarez [Erik.Pineda-Alvarez@utdallas.edu]</p>
+        <p><strong>Contact:</strong> Erik Pineda-Alvarez — <a href="mailto:Erik.Pineda-Alvarez@utdallas.edu">Erik.Pineda-Alvarez@utdallas.edu</a></p>
         <ul>
           <li>Developing a wireless UAV control system using Ettus USRP B206mini-i to transmit custom RF signals for large drone operation.</li>
           <li>Implementing SDR-based waveform generation and link analysis through RadioConda and GNU Radio environments.</li>
@@ -382,6 +383,19 @@
         const el=document.getElementById(id);
         if(el){e.preventDefault();document.querySelectorAll('.links a').forEach(x=>x.classList.remove('active'));a.classList.add('active');el.scrollIntoView({behavior:'smooth', block:'start'});}
       });
+    });
+  </script>
+  <script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    toggleBtn.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+
+    toggleBtn.addEventListener('click', () => {
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      toggleBtn.textContent = theme === 'dark' ? '☀️' : '🌙';
     });
   </script>
 </body>

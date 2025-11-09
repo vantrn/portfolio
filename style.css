@@ -1,4 +1,16 @@
-:root{
+/* Light theme variables */
+:root {
+  --bg: #f7f9fb;
+  --panel: #ffffff;
+  --elev: #f1f3f6;
+  --fg: #111;
+  --muted: #555;
+  --line: #d1d9e0;
+  --accent: #0077ff;
+}
+
+/* Dark theme override */
+[data-theme="dark"] {
   --bg:#0e1216;
   --panel:#141a20;
   --elev:#182129;
@@ -6,6 +18,22 @@
   --muted:#a4b0ba;
   --line:#24303a;
   --accent:#8bd3ff;
+}
+
+/* Theme toggle button */
+#theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  margin-left: 12px;
+  color: var(--muted);
+  transition: transform 0.2s ease;
+}
+
+#theme-toggle:hover {
+  color: var(--fg);
+  transform: scale(1.2);
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
